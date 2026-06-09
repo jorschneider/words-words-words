@@ -1,0 +1,282 @@
+[
+ {
+  "id": "c01",
+  "character": "Horatio",
+  "text": "What art thou that usurp'st this time of night...? By heaven I charge thee, speak!",
+  "file": "c01.m4a",
+  "start": 8.85,
+  "dur": 5.39,
+  "processing": "none"
+ },
+ {
+  "id": "c02",
+  "character": "Ghost",
+  "text": "I am thy father's spirit, / Doom'd for a certain term to walk the night.",
+  "file": "c02.m4a",
+  "start": 22,
+  "dur": 4.409,
+  "processing": "ghost1"
+ },
+ {
+  "id": "c03",
+  "character": "Ghost",
+  "text": "Revenge his foule and most unnaturall murther.",
+  "file": "c03.m4a",
+  "start": 28.909,
+  "dur": 2.718,
+  "processing": "ghost1"
+ },
+ {
+  "id": "c04",
+  "character": "Ghost",
+  "text": "Adieu, adieu, adieu. Remember me.",
+  "file": "c04.m4a",
+  "start": 34.127,
+  "dur": 3.234,
+  "processing": "ghost2"
+ },
+ {
+  "id": "c05",
+  "character": "Hamlet",
+  "text": "Remember thee! / Ay, thou poor ghost, while memory holds a seat / In this distracted globe.",
+  "file": "c05.m4a",
+  "start": 39.861,
+  "dur": 7.006,
+  "processing": "none"
+ },
+ {
+  "id": "c06",
+  "character": "Polonius",
+  "text": "Though this be madness, yet there is method in't.",
+  "file": "c06.m4a",
+  "start": 52.717,
+  "dur": 2.793,
+  "processing": "none"
+ },
+ {
+  "id": "c07",
+  "character": "Hamlet",
+  "text": "...the play's the thing / Wherein I'll catch the conscience of the king.",
+  "file": "c07.m4a",
+  "start": 58.01,
+  "dur": 2.908,
+  "processing": "none"
+ },
+ {
+  "id": "c08",
+  "character": "Hamlet",
+  "text": "To be, or not to be, that is the question.",
+  "file": "c08.m4a",
+  "start": 64.418,
+  "dur": 3.38,
+  "processing": "none"
+ },
+ {
+  "id": "c09",
+  "character": "Hamlet",
+  "text": "Thus conscience does make cowards of us all... and enterprises of great pith and moment... lose the name of action.",
+  "file": "c09.m4a",
+  "start": 73.798,
+  "dur": 6.461,
+  "processing": "none"
+ },
+ {
+  "id": "c10",
+  "character": "Gertrude",
+  "text": "The lady doth protest too much, methinks.",
+  "file": "c10.m4a",
+  "start": 91.109,
+  "dur": 3.032,
+  "processing": "none"
+ },
+ {
+  "id": "c11",
+  "character": "Claudius",
+  "text": "Give me some light: away!",
+  "file": "c11.m4a",
+  "start": 96.141,
+  "dur": 1.751,
+  "processing": "none"
+ },
+ {
+  "id": "c12",
+  "character": "Hamlet",
+  "text": "O good Horatio, I'll take the ghost's word for a thousand pound.",
+  "file": "c12.m4a",
+  "start": 100.392,
+  "dur": 4.09,
+  "processing": "none"
+ },
+ {
+  "id": "c13",
+  "character": "Hamlet",
+  "text": "Now might I do it pat, now he is praying; / And now I'll do't. And so he goes to heaven; / And so am I revenged. That would be scann'd.",
+  "file": "c13.m4a",
+  "start": 108.482,
+  "dur": 8.84,
+  "processing": "none"
+ },
+ {
+  "id": "c14",
+  "character": "Claudius",
+  "text": "My words fly up, my thoughts remain below: / Words without thoughts never to heaven go.",
+  "file": "c14.m4a",
+  "start": 120.822,
+  "dur": 5.22,
+  "processing": "none"
+ },
+ {
+  "id": "c15",
+  "character": "Polonius",
+  "text": "O, I am slain!",
+  "file": "c15.m4a",
+  "start": 131.542,
+  "dur": 1.207,
+  "processing": "cutoff-mid-word"
+ },
+ {
+  "id": "c16",
+  "character": "Hamlet",
+  "text": "Thou wretched, rash, intruding fool, farewell! / I took thee for thy better.",
+  "file": "c16.m4a",
+  "start": 135.249,
+  "dur": 5.938,
+  "processing": "none"
+ },
+ {
+  "id": "c17",
+  "character": "Ophelia",
+  "text": "Lord, we know what we are, but know not what we may be.",
+  "file": "c17.m4a",
+  "start": 150.037,
+  "dur": 3.058,
+  "processing": "none"
+ },
+ {
+  "id": "c18",
+  "character": "Horatio",
+  "text": "Her speech is nothing, / Yet the unshaped use of it doth move / The hearers to collection; they aim at it, / And botch the words up fit to their own thoughts.",
+  "file": "c18.m4a",
+  "start": 155.595,
+  "dur": 10.733,
+  "processing": "none"
+ },
+ {
+  "id": "c19",
+  "character": "Ophelia",
+  "text": "Good night, ladies; good night, sweet ladies; good night, good night.",
+  "file": "c19.m4a",
+  "start": 168.828,
+  "dur": 4.788,
+  "processing": "granulate-tail",
+  "granStart": 0.55
+ },
+ {
+  "id": "c20",
+  "character": "Hamlet",
+  "text": "Not a whit, we defy augury: there's a special providence in the fall of a sparrow.",
+  "file": "c20.m4a",
+  "start": 184.5,
+  "dur": 5.102,
+  "processing": "none"
+ },
+ {
+  "id": "c21",
+  "character": "Hamlet",
+  "text": "If it be now, 'tis not to come; if it be not to come, it will be now; if it be not now, yet it will come: the readiness is all.",
+  "file": "c21.m4a",
+  "start": 192.102,
+  "dur": 8.991,
+  "processing": "none"
+ },
+ {
+  "id": "c22",
+  "character": "Hamlet",
+  "text": "Let be.",
+  "file": "c22.m4a",
+  "start": 203.593,
+  "dur": 0.69,
+  "processing": "none"
+ },
+ {
+  "id": "c23",
+  "character": "Gertrude",
+  "text": "No, no, the drink, the drink... O my dear Hamlet... the drink, the drink! I am poison'd.",
+  "file": "c23.m4a",
+  "start": 214,
+  "dur": 6.958,
+  "processing": "none"
+ },
+ {
+  "id": "c24",
+  "character": "Laertes",
+  "text": "It is here, Hamlet: Hamlet, thou art slain... The treacherous instrument is in thy hand... the king, the king's to blame.",
+  "file": "c24.m4a",
+  "start": 222.958,
+  "dur": 7.649,
+  "processing": "none"
+ },
+ {
+  "id": "c25",
+  "character": "Hamlet",
+  "text": "The point envenom'd too! Then, venom, to thy work.",
+  "file": "c25.m4a",
+  "start": 232.107,
+  "dur": 3.941,
+  "processing": "none"
+ },
+ {
+  "id": "c26",
+  "character": "Laertes",
+  "text": "Exchange forgiveness with me, noble Hamlet.",
+  "file": "c26.m4a",
+  "start": 239.048,
+  "dur": 2.565,
+  "processing": "none"
+ },
+ {
+  "id": "c27",
+  "character": "Hamlet",
+  "text": "Horatio, I am dead; / Thou livest; report me and my cause aright / To the unsatisfied.",
+  "file": "c27.m4a",
+  "start": 246.963,
+  "dur": 6.749,
+  "processing": "none"
+ },
+ {
+  "id": "c28",
+  "character": "Hamlet",
+  "text": "If thou didst ever hold me in thy heart, / Absent thee from felicity awhile, / And in this harsh world draw thy breath in pain, / To tell my story.",
+  "file": "c28.m4a",
+  "start": 255.212,
+  "dur": 10.884,
+  "processing": "none"
+ },
+ {
+  "id": "c29",
+  "character": "Hamlet",
+  "text": "The rest is silence.",
+  "file": "c29.m4a",
+  "start": 269.596,
+  "dur": 1.212,
+  "processing": "whisper"
+ },
+ {
+  "id": "c30",
+  "character": "Horatio",
+  "text": "Now cracks a noble heart. Good night, sweet prince, / And flights of angels sing thee to thy rest!",
+  "file": "c30.m4a",
+  "start": 274.808,
+  "dur": 6.867,
+  "processing": "none"
+ },
+ {
+  "id": "c31",
+  "character": "Fortinbras",
+  "text": "...Bear Hamlet, like a soldier, to the stage... Go, bid the soldiers shoot.",
+  "file": "c31.m4a",
+  "start": 282.675,
+  "dur": 5.462,
+  "processing": "none"
+ }
+]

@@ -1,0 +1,163 @@
+/* WORDS, WORDS, WORDS — chrome. The page is the light source; everything else is the dark desk. */
+
+@font-face {
+  font-family: 'IM Fell English';
+  src: url('fonts/fell-roman.woff2') format('woff2');
+  font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'IM Fell English';
+  src: url('fonts/fell-italic.woff2') format('woff2');
+  font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'IM Fell English SC';
+  src: url('fonts/fell-sc.woff2') format('woff2');
+  font-style: normal; font-display: swap;
+}
+
+:root {
+  --desk: #171310;
+  --desk-soft: #211b15;
+  --parchment: #EAE0C8;
+  --iron: #2A2118;
+  --rubric: #9E2B25;
+  --gold: #C9A227;
+  --ghost: #C7BBA0;
+  --dim: #8d8270;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--desk);
+  color: var(--ghost);
+  font-family: 'IM Fell English', serif;
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.masthead { text-align: center; padding: 2.4rem 1rem 1.4rem; }
+.over-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 0.8rem; letter-spacing: 0.22em; color: var(--dim);
+}
+h1 {
+  font-family: 'IM Fell English SC', serif;
+  font-weight: normal;
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+  color: var(--parchment);
+  letter-spacing: 0.04em;
+  margin: 0.3rem 0 0.4rem;
+}
+.sub-title { font-style: italic; color: var(--dim); font-size: 1rem; }
+.sub-title em { color: var(--rubric); font-style: italic; }
+
+main { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 0 1rem 4rem; }
+
+.cinema { width: min(1060px, 96vw); }
+
+.leaf {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--parchment);
+  outline: 1px solid rgba(234, 224, 200, 0.25);
+  outline-offset: 6px;
+}
+#screen { width: 100%; height: 100%; display: block; }
+
+.poster {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.6rem;
+  background: rgba(234, 224, 200, 0.0);
+}
+.poster[hidden] { display: none; }
+.bigplay {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1.5rem; letter-spacing: 0.12em;
+  color: var(--parchment);
+  background: var(--rubric);
+  border: none; cursor: pointer;
+  padding: 0.7rem 2.2rem 0.8rem;
+  box-shadow: 2px 2px 0 var(--iron);
+}
+.bigplay:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--iron); }
+.bigplay:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--iron); }
+.bigplay .manicule { font-family: serif; }
+.poster-note { font-style: italic; color: var(--iron); opacity: 0.75; font-size: 0.9rem; }
+
+.caption {
+  min-height: 2.2rem;
+  padding: 0.45rem 0.6rem 0;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--parchment);
+  opacity: 0; transition: opacity 0.18s;
+}
+.caption[data-on="1"] { opacity: 1; }
+.cap-who {
+  font-family: 'IM Fell English SC', serif; font-style: normal;
+  font-size: 0.78rem; letter-spacing: 0.14em; color: var(--dim);
+  margin-right: 0.5em;
+}
+
+.controls {
+  display: flex; align-items: center; gap: 0.9rem;
+  padding: 0.5rem 0.2rem;
+  border-top: 1px solid rgba(199, 187, 160, 0.18);
+  margin-top: 0.4rem;
+}
+.ctl {
+  background: none; border: none; cursor: pointer;
+  color: var(--ghost); font-family: inherit; font-size: 1rem;
+}
+.ctl:hover { color: var(--parchment); }
+.ctl.word { font-family: 'IM Fell English SC', serif; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--dim); }
+.ctl.word.on { color: var(--gold); }
+#play { font-size: 1.05rem; width: 1.6rem; }
+.clock { font-size: 0.85rem; color: var(--dim); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.scrub {
+  flex: 1; appearance: none; height: 18px; background: transparent; cursor: pointer;
+}
+.scrub::-webkit-slider-runnable-track {
+  height: 2px; background: rgba(199, 187, 160, 0.35);
+}
+.scrub::-webkit-slider-thumb {
+  appearance: none; width: 11px; height: 11px; margin-top: -4.5px;
+  background: var(--rubric); transform: rotate(45deg);
+}
+.scrub::-moz-range-track { height: 2px; background: rgba(199, 187, 160, 0.35); }
+.scrub::-moz-range-thumb { width: 11px; height: 11px; border: none; border-radius: 0; background: var(--rubric); transform: rotate(45deg); }
+
+.colophon {
+  width: min(720px, 92vw);
+  margin-top: 3.2rem;
+  color: var(--ghost);
+  line-height: 1.55;
+}
+.colophon h2 {
+  font-family: 'IM Fell English SC', serif; font-weight: normal;
+  font-size: 1rem; letter-spacing: 0.2em;
+  color: var(--rubric);
+  margin: 1.8rem 0 0.5rem;
+}
+.colophon p { margin-bottom: 0.8rem; font-size: 1.02rem; }
+.colophon em { color: var(--parchment); }
+.credits { font-size: 0.92rem; color: var(--dim); }
+
+/* frame-capture mode: nothing but the film */
+body.frame-only .masthead, body.frame-only .caption, body.frame-only .controls,
+body.frame-only .colophon { display: none; }
+body.frame-only { padding: 0; }
+body.frame-only main { padding: 0; }
+body.frame-only .cinema { width: 100vw; }
+body.frame-only .leaf { outline: none; }
+
+@media (max-width: 640px) {
+  .controls { flex-wrap: wrap; }
+  .caption { font-size: 0.9rem; }
+}

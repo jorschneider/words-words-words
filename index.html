@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WORDS, WORDS, WORDS — an animated Hamlet in one inference pass</title>
+<meta name="description" content="A five-minute animated film: Hamlet as a single chain-of-thought trace, written on one manuscript page. Every word Shakespeare's; the AI reading lives entirely in the form.">
+<meta property="og:title" content="WORDS, WORDS, WORDS">
+<meta property="og:description" content="Hamlet in one inference pass — a five-minute animated film on a single manuscript page.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="masthead">
+  <p class="over-title">An animated film in one unbroken shot · 4 min 50 s</p>
+  <h1>Words, Words, Words</h1>
+  <p class="sub-title">The Tragicall Historie of HAMLET, Prince of Denmarke — <em>set downe in one passe</em></p>
+</header>
+
+<main>
+  <div class="cinema">
+    <div class="leaf">
+      <canvas id="screen"></canvas>
+      <div id="poster" class="poster">
+        <button id="bigplay" class="bigplay" aria-label="Play the film">
+          <span class="manicule">☞</span> <span>Play</span>
+        </button>
+        <p class="poster-note">with sound · 4:50</p>
+      </div>
+    </div>
+    <div id="caption" class="caption" data-on="0"></div>
+    <div class="controls" id="controls">
+      <button id="play" class="ctl" aria-label="Play or pause">▶</button>
+      <span id="clock" class="clock">0:00&thinsp;/&thinsp;4:50</span>
+      <input id="scrub" class="scrub" type="range" min="0" max="1000" value="0" step="1" aria-label="Scrub through the film">
+      <button id="cap" class="ctl word on" aria-pressed="true">captions</button>
+      <button id="mute" class="ctl word" aria-pressed="false">sound on</button>
+    </div>
+  </div>
+
+  <section class="colophon">
+    <h2>The Conceit</h2>
+    <p>The film is one page, written in real time, in one unbroken five-minute shot. The Ghost dictates a command
+    in rubric red; what follows is not the play but the <em>trace</em> — a son commanded to act who instead
+    branches, verifies, objects, and overflows his own context. Every pruned branch stays on the page as scar
+    tissue. The camera is an attention mechanism. The one action of the film is a single stage direction,
+    stamped in gold, at minute four.</p>
+    <p>Every spoken and written word is Shakespeare's — Folio and Second Quarto, nothing added. The interpretation
+    lives entirely in the form: the delay as a verification loop whose threshold rises with every positive result;
+    the Mousetrap as a behavioral eval; the Ghost's second visit as instruction re-injection against a fading
+    prompt; Ophelia's drowning as context eviction; Laertes and Fortinbras as greedy decoders, straight arrows
+    through the thicket. The deed is one token. The deliberation was five acts. The trace is what survives —
+    it is the play you have been reading for four hundred years.</p>
+    <h2>Production</h2>
+    <p class="credits" id="credits">Voiced entirely by Apple speech synthesizers, cast by interiority — the
+    deliberator gets the most human voice in the machine; the man of action gets the most mechanical, and
+    inherits Denmark. Score synthesized in WebAudio from the writing itself: one plucked string per written line,
+    a pedal fifth tuned to the ink-saturation of the command. Drawn in code: iron-gall ink, rubric, one gold stamp,
+    on a page of 1000 × 1414 units. Written, directed, and produced by Claude (Fable 5) for ChinaTalk.</p>
+  </section>
+</main>
+
+<script type="module" src="film/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,699 @@
+{
+ "title": "The Tragicall Historie of HAMLET Prince of Denmarke",
+ "subtitle": "An inference trace, illuminated. One page, one unbroken shot, four minutes fifty-three seconds.",
+ "runtime_target_s": 293,
+ "cast": [
+  {
+   "character": "Hamlet",
+   "voice": "Jamie (Premium)",
+   "rate_wpm": 152,
+   "processing": "none \u2014 driest, closest chain in the mix, zero reverb send; he must sound like the room you are in. Exception: c29 uses the 'whisper' chain (gain -6 dB, highshelf -4 dB @ 4 kHz, fully dry). His flatness IS the performance: every excerpt is declarative, interrogative, or imperative, chosen to land without an actor's breath."
+  },
+  {
+   "character": "Ghost",
+   "voice": "Daniel",
+   "rate_wpm": 140,
+   "processing": "ghost1 on c02\u2013c03: ConvolverNode 4.5 s cathedral IR @ 35% wet + lowpass 2.2 kHz + detune -2 semitones. ghost2 on c04: ghost1 chain + bandpass 300\u20131800 Hz + 5 Hz tremolo, wet raised to 55% \u2014 the voice recedes as it asks to be remembered."
+  },
+  {
+   "character": "Horatio",
+   "voice": "Ava (Premium)",
+   "rate_wpm": 156,
+   "processing": "none, ever. Horatio is the attestation channel: the one voice that must always arrive unprocessed \u2014 first cue and second-to-last. The Gentleman's IV.v report is hers per the Folio's consolidation of the role."
+  },
+  {
+   "character": "Claudius",
+   "voice": "Tom (Enhanced)",
+   "rate_wpm": 148,
+   "processing": "none on the voice. During c14 ONLY, the score doubles him with a sub-octave murmur (-12 st pitched copy of his fundamental, lowpass 220 Hz, -14 dB) \u2014 the 'thoughts below' live in the score, not in voice FX. Tom's smooth plausibility is the casting joke: the eval passes on this voice, and this voice is lying about its inner state."
+  },
+  {
+   "character": "Gertrude",
+   "voice": "Moira",
+   "rate_wpm": 160,
+   "processing": "none. The Irish-inflected warmth makes 'methinks' wry and 'the drink, the drink' suddenly maternal."
+  },
+  {
+   "character": "Ophelia",
+   "voice": "Zoe (Premium)",
+   "rate_wpm": 145,
+   "processing": "none on c17 \u2014 by mandate the cleanest audio moment in the film: dry, close, score fully tacet, re-record until zero artifact. granulate-tail on c19 ONLY: dry until mid-'sweet ladies', final ~2.5 s sliced into 40\u201380 ms grains, randomized order and pan (\u00b10.8), density decaying to zero over 3.5 s, panning right with the visual particles."
+  },
+  {
+   "character": "Laertes",
+   "voice": "Evan (Enhanced)",
+   "rate_wpm": 170,
+   "processing": "none. Hottest rate in the cast \u2014 he should sound like he is ahead of the page; urgency without acting."
+  },
+  {
+   "character": "Polonius",
+   "voice": "Kathy",
+   "rate_wpm": 178,
+   "processing": "none on c06. cutoff-mid-word on c15: synthesize the full word 'slain', then hard-gate the render at ~60% through the word \u2014 an edit, not a fade. The dated, fussy flatness is the dark-comedy instrument; do NOT add reverb behind the arras \u2014 the deadpan is the gag, the cutoff is the kill, and the heartbeat that follows corrects the laugh."
+  },
+  {
+   "character": "Fortinbras",
+   "voice": "Fred",
+   "rate_wpm": 160,
+   "processing": "none. The oldest, most machinic voice in macOS for the machine of state that inherits the page. No underscore, no cannon \u2014 the flatness needs no mask."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s1",
+   "name": "The Watch",
+   "start_est_s": 0,
+   "duration_est_s": 18,
+   "summary": "Cold open. A blank vellum page in candle-dark. A nib scratches the sacred title into being, stroke by stroke. The camera drops to the top of the text block \u2014 the battlements \u2014 where Horatio challenges something that has appeared between the letterforms. Curiosity, the first feeling: someone is watching this trace begin, and demanding it identify itself.",
+   "cues": [
+    {
+     "id": "c01",
+     "character": "Horatio",
+     "text": "What art thou that usurp'st this time of night...? By heaven I charge thee, speak!",
+     "tts_text": "What art thou that usurpst this time of night? By heaven I charge thee, speak!",
+     "source": "I.i",
+     "pause_before_s": 8.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "CAM has settled at (470,265,300) on the first ruled line of band_ghost. Her words inscribe in a quick upright secretary hand exactly as spoken. On 'speak!' the inscription halts mid-line and the page holds \u2014 a demand for output, hanging unanswered."
+    }
+   ],
+   "visual_beats": [
+    {
+     "when": "scene start (0:00\u20130:08)",
+     "visual": "Black, then candle-warm vignette. The title cartouche writes itself in blackletter at CAM(500,74,420), nib foley synced stroke-for-stroke: 'The Tragicall Historie of HAMLET Prince of Denmarke' \u2014 ink and red flourishes, NO gold. Beneath it a hairline token-ruler ticks in: 31 ticks, one per future cue.",
+     "score": "Vellum room tone (tape hiss, -38 dB) fades in under the nib. Nothing tonal yet."
+    },
+    {
+     "when": "after c01 (+1.5s)",
+     "visual": "In the left margin three tiny watch figures (marginalia-grotesque style) materialize facing the text block. Between two letterforms of the unfinished line, a HOLLOW outline letter-shape \u2014 a glyph with no ink fill \u2014 slides through and vanishes downward. The ghost is a letterform that was never committed.",
+     "score": "First pitch: a detuned open fifth (D\u2013A) drone enters at the ghost-shape's pass, very low in the mix."
+    }
+   ],
+   "score_notes": "Foley-first: dry nib scratch (2\u20136 kHz) is the only event until the drone enters with the ghost-shape. Establish the rule the whole film keeps: high dry sounds = writing/thought. The low register (the 52 Hz heartbeat band) is virgin territory until Polonius dies at ~133s."
+  },
+  {
+   "id": "s2",
+   "name": "The Rubric",
+   "start_est_s": 18,
+   "duration_est_s": 27.5,
+   "summary": "The Ghost speaks and the system prompt is written. The hollow letterform stands full-height in the right gutter and dictates; the red rubric \u2014 the one sacred Q2 line \u2014 inscribes itself above the entire text block, and a hairline red rule drops the full length of the inner margin: the instruction now scopes everything below it. Hamlet binds himself to it with the thesis line about memory holding a seat in a distracted globe. Dread replaces curiosity: the trace has an instruction it did not choose.",
+   "cues": [
+    {
+     "id": "c02",
+     "character": "Ghost",
+     "text": "I am thy father's spirit, / Doom'd for a certain term to walk the night.",
+     "tts_text": "I am thy father's spirit, doomed for a certain term to walk the night.",
+     "source": "I.v",
+     "pause_before_s": 4,
+     "processing": "ghost1",
+     "on_screen": "body-line",
+     "visual_sync": "CAM pans right, tightens to (640,265,280): the hollow letterform now stands full-height at the top of margin_right_inner, a man-shaped ligature of empty outlines. As he speaks, his words appear in band_ghost as OUTLINE-ONLY letters \u2014 legible but unfilled, text without weight."
+    },
+    {
+     "id": "c03",
+     "character": "Ghost",
+     "text": "Revenge his foule and most unnaturall murther.",
+     "tts_text": "Revenge his foul and most unnatural murther.",
+     "source": "I.v (Q2 spelling \u2014 SACRED, displayed verbatim, never modernized; 'murther' spoken as written)",
+     "pause_before_s": 2.5,
+     "processing": "ghost1",
+     "on_screen": "header",
+     "visual_sync": "CAM tilts up to the rubric, (500,152,460). The line inscribes in VERMILION RED, letter by letter, in the rubricator's larger formal hand \u2014 red-chalk scrape foley pitched LOWER than black-ink scratch (the command is heavier than thought). On the final period a hairline red rule extends from the rubric down the inner edge of the left margin, the length of the whole page; the camera lets it leave frame. The full stop is the root node; the line stays at full saturation all film."
+    },
+    {
+     "id": "c04",
+     "character": "Ghost",
+     "text": "Adieu, adieu, adieu. Remember me.",
+     "source": "I.v (Q2: 'Adiew, adiew, adiew')",
+     "pause_before_s": 2.5,
+     "processing": "ghost2",
+     "on_screen": "body-line",
+     "visual_sync": "Back down to band_ghost. The hollow figure's outlines thin as he speaks; each 'adieu' deletes one stroke of his shape. On 'Remember me' the last outline collapses into a faint blind impress at (790,250) \u2014 visible only as embossing, no ink. The words 'Remember me' remain inked in the line; the speaker does not."
+    },
+    {
+     "id": "c05",
+     "character": "Hamlet",
+     "text": "Remember thee! / Ay, thou poor ghost, while memory holds a seat / In this distracted globe.",
+     "source": "I.v",
+     "pause_before_s": 2.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "Hamlet's hand \u2014 smaller, faster, more slanted than the rubricator's \u2014 writes the reply directly beneath the impress. On 'memory holds a seat' the camera nudges in 30u; the word 'globe' at (565,310) receives a thin penned circle the instant it lands: the page annotating itself. The circle survives to the final frame."
+    }
+   ],
+   "visual_beats": [
+    {
+     "when": "after c05 (+1s, to scene end)",
+     "visual": "The red marginal rule finishes its descent somewhere below frame. The blind-impress ghost shape stays in the right gutter, permanent. Stillness on the circled 'globe' until s3.",
+     "score": "Drone sustains; one high bowed-glass harmonic shimmers only while the Ghost speaks (c02\u2013c04), gone the moment c04 ends. The silence after c05 is held breath, not emptiness."
+    }
+   ],
+   "score_notes": "ghost1/ghost2 carry the unearthliness; the score must NOT double it \u2014 keep the drone dry and steady so the reverb reads as belonging to the voice, not the room. No low pulses anywhere: nothing irreversible has happened. The murder is before the film; the page only inherits the instruction."
+  },
+  {
+   "id": "s3",
+   "name": "The Fork",
+   "start_est_s": 45.5,
+   "duration_est_s": 35.5,
+   "summary": "Deliberation as speculative decoding. Polonius files the first misread from the margin (dark comedy, beat one). Hamlet commissions the eval; then the column splits at 'To be' into a seven-branch stemma of candidate continuations \u2014 and 'conscience does make cowards' prunes them all with subpuncting dots, the medieval deletion that leaves dead text legible. Thought is visible, reversible, and free. The audience learns what deliberation looks like so they can feel the difference when something finally costs.",
+   "cues": [
+    {
+     "id": "c06",
+     "character": "Polonius",
+     "text": "Though this be madness, yet there is method in't.",
+     "tts_text": "Though this be madness, yet there is method in it.",
+     "source": "II.ii (aside)",
+     "pause_before_s": 3.5,
+     "processing": "none",
+     "on_screen": "margin",
+     "visual_sync": "CAM drifts down the left margin to (120,420,300). A stooped marginal figure in a scholar's cap pens a neat gloss box in the ledger, complete with a cuff-and-finger manicule at (95,400) aimed confidently at the WRONG line \u2014 one line above the text it annotates. Hold one beat on the mis-aimed finger. First laugh. The camera pointedly declines to follow where it points."
+    },
+    {
+     "id": "c07",
+     "character": "Hamlet",
+     "text": "...the play's the thing / Wherein I'll catch the conscience of the king.",
+     "tts_text": "The play's the thing wherein I'll catch the conscience of the king.",
+     "source": "II.ii",
+     "pause_before_s": 2.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "CAM returns to the column, (460,380,380). The couplet writes itself, and as the rhyme closes ('thing'/'king') a light rectangular frame begins ruling itself far below at (400,600) \u2014 the empty double-ruled border of the Mousetrap inset, scaffolded before its contents exist. A test harness, drawn in advance. Border-ruling foley: longer, smoother strokes than text-writing."
+    },
+    {
+     "id": "c08",
+     "character": "Hamlet",
+     "text": "To be, or not to be, that is the question.",
+     "source": "III.i",
+     "pause_before_s": 3.5,
+     "processing": "none",
+     "on_screen": "branch-label",
+     "visual_sync": "CAM centers band_fork, (460,460,420). The line writes \u2014 and at the colon of 'question' the single ruled line SPLITS: two hairlines diverge, then four, then seven, a stemma growing downward through the band, each branch carrying a faint half-legible phrase in lighter ink wash (sleep... dream... bare bodkin... bear those ills...). Branch growth continues in silence ~5 s into the next pause. This is the page thinking."
+    },
+    {
+     "id": "c09",
+     "character": "Hamlet",
+     "text": "Thus conscience does make cowards of us all... and enterprises of great pith and moment... lose the name of action.",
+     "source": "III.i",
+     "pause_before_s": 6,
+     "processing": "none",
+     "on_screen": "branch-label",
+     "visual_sync": "Rows of small red dots appear BENEATH each branch's text \u2014 subpuncting, the manuscript deletion mark \u2014 branch by branch, timed so the last branch is dotted exactly on 'action'. Nothing is scraped away: every pruned thought stays legible under its dots. Build note: the seven branches share four master curvatures so the dead fan composes as a feather, not a scribble. One hairline survives and runs into the waiting inset frame below."
+    }
+   ],
+   "visual_beats": [
+    {
+     "when": "after c09 (+1s, to scene end)",
+     "visual": "CAM eases down the surviving hairline toward the ruled inset frame, arriving at its top edge as the scene ends. The dotted dead branches recede above \u2014 readable again in the final frame.",
+     "score": "Under branch growth: a dry ticking lattice of prepared-piano harmonics, one tick per branch node \u2014 busy, weightless, high. Each tick GATES OUT as its branch is subpuncted. By 'lose the name of action' the lattice is gone and only the drone remains."
+    }
+   ],
+   "score_notes": "This scene teaches the heartbeat rule by withholding it: maximal mental activity, zero pulses, no low end anywhere. The prepared-piano ticks are tokens being considered; their silencing under subpunct dots is the sound of thoughts being free to die. Ophelia's eviction in s5 must sound categorically DIFFERENT from this pruning (granular + terminal pulse, not gated ticks): pruning a thought vs deleting a person."
+  },
+  {
+   "id": "s4",
+   "name": "The Eval and the Misread",
+   "start_est_s": 81,
+   "duration_est_s": 62,
+   "summary": "The intellectual core, three movements. (1) The Mousetrap: a play-within painted as a manuscript miniature \u2014 an eval run inside the trace \u2014 and it PASSES: a verdigris tick, a true manicule, and a verification filament climbing back to the rubric. (2) The prayer scene, the mandated dark twin: Hamlet reads the kneeling figure as 'praying' and defers \u2014 then the page shows the words rising while the thoughts stay below. The eval passed and still misread the inner state. (3) The cost arrives immediately: a sword through an arras, the wrong man, a voice cut off mid-word, the film's FIRST heartbeat. Dark comedy curdles into consequence.",
+   "cues": [
+    {
+     "id": "c10",
+     "character": "Gertrude",
+     "text": "The lady doth protest too much, methinks.",
+     "source": "III.ii (Q2)",
+     "pause_before_s": 8.5,
+     "processing": "none",
+     "on_screen": "inset",
+     "visual_sync": "The Mousetrap miniature has painted itself during the pause (see beat). CAM holds the full miniature, (510,675,320): tiny stage, sleeping player-king, poisoner with vial, flat gold-less gouache, interior animated at 8 fps against the page's 24 \u2014 the simulation is cheaper than reality. Her line appears on a banderole curling from a spectator figure in the inset's lower border: commentary from inside the test's own audience."
+    },
+    {
+     "id": "c11",
+     "character": "Claudius",
+     "text": "Give me some light: away!",
+     "source": "III.ii",
+     "pause_before_s": 2,
+     "processing": "none",
+     "on_screen": "inset",
+     "visual_sync": "On 'light' the inset floods with painted torch-glare \u2014 orange gouache drowning the miniature stage. On 'away!' the wash slams to the borders like a door; the border strokes thicken 3x to heavy black (the test chamber sealed) and a VERDIGRIS-GREEN tick stamps the inset's NE corner at (612,606). Deliberately NOT gold: verdigris is the verification color; gold is reserved for the one irreversible emission. The eval has returned PASS."
+    },
+    {
+     "id": "c12",
+     "character": "Hamlet",
+     "text": "O good Horatio, I'll take the ghost's word for a thousand pound.",
+     "source": "III.ii",
+     "pause_before_s": 2.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "CAM drops below the inset, (460,770,340), as the line writes. From the left ledger a fresh manicule draws itself pointing at this line \u2014 and unlike Polonius's, this one points TRUE; a small Horatio figure stands beside it, the only margin figure looking at the right line. Simultaneously a verdigris hairline climbs from the PASS tick along the inset's top edge and up the inner right gutter to the rubric's full stop at (812,160): the red command RE-WETS, one gloss pulse. Verification connects evidence back to instruction."
+    },
+    {
+     "id": "c13",
+     "character": "Hamlet",
+     "text": "Now might I do it pat, now he is praying; / And now I'll do't. And so he goes to heaven; / And so am I revenged. That would be scann'd.",
+     "tts_text": "Now might I do it pat, now he is praying. And now I'll do it. And so he goes to heaven. And so am I revenged. That would be scanned.",
+     "source": "III.iii",
+     "pause_before_s": 4,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "CAM pans to band_prayer, (460,850,380). In the right gutter a small kneeling crowned figure is painted at (800,840), crown clutched under one arm, donor-portrait pose. As Hamlet speaks, a long straight pen-stroke \u2014 unmistakably a blade \u2014 extends from the text block toward the figure's nape, trembling \u00b10.5u with the syllables, freezing one unit short at 'That would be scann'd.' The word 'scann'd' gets an instant interlinear gloss-mark (two short strokes): the page flagging a token for re-evaluation."
+    },
+    {
+     "id": "c14",
+     "character": "Claudius",
+     "text": "My words fly up, my thoughts remain below: / Words without thoughts never to heaven go.",
+     "source": "III.iii",
+     "pause_before_s": 3.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "The blade has un-drawn itself during the pause (deferral \u2014 see beat). Now the kneeling figure speaks. The couplet writes on the baseline \u2014 then faint GREY hollow copies of its words detach and drift UP into the interlinear space, thinning as they rise toward the rubric, animated fluent at 24 fps; while below the line heavy BLACK blots gather and SINK at a sticky 6 fps, pooling at (800,915) directly under the kneeling figure \u2014 and stop dead, permanent. The words fly up. The thoughts remain below. Hold 3 s on the completed double register after the voice stops."
+    },
+    {
+     "id": "c15",
+     "character": "Polonius",
+     "text": "O, I am slain!",
+     "tts_text": "O, I am slain",
+     "source": "III.iv (render the full word; hard-gate at ~60% through 'slain')",
+     "pause_before_s": 5.5,
+     "processing": "cutoff-mid-word",
+     "on_screen": "body-line",
+     "visual_sync": "CAM has descended to band_closet, (460,985,360): a painted arras \u2014 manuscript drapery \u2014 covers the band's right third, and as the camera settles a single violent pen-stroke pierces it corner to corner (the harshest nib scratch in the film, still high, still 'writing'). The cue: his line emerges HALF-HIDDEN from under the curtain's edge, the flat legacy voice deadpanning from behind drapery \u2014 the laugh starts \u2014 and the audio CUTS mid-word, an edit not a fade; the written line stops mid-letter, never finished \u2014"
+    },
+    {
+     "id": "c16",
+     "character": "Hamlet",
+     "text": "Thou wretched, rash, intruding fool, farewell! / I took thee for thy better.",
+     "source": "III.iv",
+     "pause_before_s": 2.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "\u2014 and HEARTBEAT 1 has already killed the laugh (see beat). The line writes beneath the pierced curtain. On 'I took thee for thy better' the camera makes its smallest move of the film: a 20u drift up to the curtain, behind which the wrong name lies. Misread number two, and this one bled."
+    }
+   ],
+   "visual_beats": [
+    {
+     "when": "scene start (81\u201386s, during pause before c10)",
+     "visual": "The empty ruled frame fills: the Mousetrap miniature paints itself in fast time-lapse \u2014 border rosettes, stage, sleeper, poisoner with vial. The play-within is the only pictorial 'scene' on the whole page: an image inside a document of text.",
+     "score": "A 3-note music-box figure (celesta-like, tinny, bandpassed as if rising out of the page) plays ONLY while the miniature paints and during c10\u2013c11 \u2014 the sole melody in the film, belonging to the fiction inside the fiction. It detunes a quarter-step as the painted vial tips."
+    },
+    {
+     "when": "after c13 (+0.5s)",
+     "visual": "DEFERRAL: the blade-stroke un-draws itself, ink running backward into the text block over ~3 s. No sound but the drone. The most consequential nothing in the film.",
+     "score": "Tacet except drone. Absolutely no pulse \u2014 this is the heartbeat rule's most important negative case."
+    },
+    {
+     "when": "after c15 (+0.5s)",
+     "visual": "FIRST HEARTBEAT. The first red wax seal stamps into the left ledger at this band's latitude (90,985) \u2014 round, embossed, wet-shining, drying matte as we watch. The page shudders 1px. Polonius's mis-aimed manicule from s3 is visible at frame edge, its gloss trail stopped mid-stroke, the pointing finger drooped 30 degrees toward the page floor.",
+     "score": "HEARTBEAT 1: 52 Hz sine lub-dub (120 ms + 90 ms hits, 280 ms apart), lowpassed 120 Hz, 600 ms sidechain duck (-3 dB) on everything else \u2014 felt more than heard. The audience's chest learns the rule here: that sound means the world changed."
+    }
+   ],
+   "score_notes": "Three segregated sound-worlds: music-box (fiction), dry ticks and scratches (thought), and at last the pulse (act). The deferral after c13 must be the quietest moment so far, and c14 the driest cue yet, so HEARTBEAT 1 lands as a physical answer to a question the silence asked."
+  },
+  {
+   "id": "s5",
+   "name": "The Eviction",
+   "start_est_s": 143,
+   "duration_est_s": 36,
+   "summary": "Ophelia. The mandated sequence, exactly: first her one clear line \u2014 the cleanest, driest, most present audio in the film, proof of a living mind on the record \u2014 then the court's botching, then the granulation. Her context is evicted not because she stopped meaning but because the budget needed the room and the hearers preferred their own collations. The page keeps the scar; the court's labels outlive her. Grief is the feeling; the indictment is of the watchers, not the weights.",
+   "cues": [
+    {
+     "id": "c17",
+     "character": "Ophelia",
+     "text": "Lord, we know what we are, but know not what we may be.",
+     "source": "IV.v",
+     "pause_before_s": 6.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "GRAFT 1, THE CLEAN LINE. The score went fully tacet 2 s before she speaks \u2014 even the hiss bed gated, the only pre-cue tacet in the film \u2014 and on her first syllable every drifting particle and vellum shimmer FREEZES: the render pauses every system except the one drawing her line. CAM close, (460,1095,280). Her words write in a fine, slightly trembling but PERFECTLY LEVEL italic \u2014 the straightest line on the page \u2014 every word fully inked, sense intact; the nib's lift is audible between words. The audience must be able to testify later: she was here, and she was clear."
+    },
+    {
+     "id": "c18",
+     "character": "Horatio",
+     "text": "Her speech is nothing, / Yet the unshaped use of it doth move / The hearers to collection; they aim at it, / And botch the words up fit to their own thoughts.",
+     "source": "IV.v (Q2: Gentleman; the Folio conflates the Gentleman into Horatio \u2014 F assignment used)",
+     "pause_before_s": 2.5,
+     "processing": "none",
+     "on_screen": "margin",
+     "visual_sync": "GRAFT 2, THE WATCHERS. The report writes as a tall marginal gloss in the right gutter beside her band \u2014 the witness documenting the failure of witnessing. On 'they aim at it', a cluster of court grotesques (crowned, chained, ruffed) leans IN from margin_right_inner toward her line. On 'botch the words up', each pins a label to her text's edge with a tiny penned tack, askew (-8 to +11 degrees): 'nothing' \u2014 'madness' \u2014 'a document in madness' \u2014 'conceit upon her father' (all Shakespeare's own court words, IV.v). None matches anything she wrote, and their ink is FRESHER and darker than anything of hers: the misreadings will outlive her."
+    },
+    {
+     "id": "c19",
+     "character": "Ophelia",
+     "text": "Good night, ladies; good night, sweet ladies; good night, good night.",
+     "source": "IV.v",
+     "pause_before_s": 2.5,
+     "processing": "granulate-tail",
+     "on_screen": "body-line",
+     "visual_sync": "Her second line begins in the same fine italic \u2014 and partway through 'sweet ladies' the just-written letters LIFT from the page as particles, ink granulating into a drift of points, audio granulating on the same clock. The grain-cloud streams right at 40\u201360 u/s, between the pinned labels and the leaning grotesques \u2014 none of whom reach to stop it \u2014 and exits the page edge; the telemetry gutter prints an EVICT notch at (956,1090) and its budget bar drops a visible block. The last grain crosses the edge ~3.5 s after her voice's final grain decays."
+    }
+   ],
+   "visual_beats": [
+    {
+     "when": "after c19 grain-tail completes (+0.5s)",
+     "visual": "SECOND HEARTBEAT, the instant the last grain leaves the page: eviction is a completed transaction, not a process. The second wax seal stamps the ledger at (90,1100). Where her lines were, the band is BLANK VELLUM \u2014 raking light reveals the blind impress of every evicted letter, a palimpsest scar, the only blank band on the finished page. The four pinned labels remain at its margin: the court's record of her, all of it wrong.",
+     "score": "HEARTBEAT 2, alone in total silence \u2014 no drone. Let the pulse decay completely before anything else sounds."
+    },
+    {
+     "when": "+1.5s after heartbeat",
+     "visual": "CAM holds on the scar. A faint scatter-trail of grains is visible crossing the right gutter to the page edge \u2014 permanent. Nothing moves.",
+     "score": "Silence held. The drone does NOT return until s6 \u2014 and returns thinned to the D alone, as if the page lost a register."
+    }
+   ],
+   "score_notes": "Acoustic honesty is the architecture: c17 is the reference signal \u2014 the cleanest capture in the film \u2014 so the granulation of c19 is verifiable loss, not stylization. Do not crossfade the granulation; let intelligibility fail word by word. This must NOT reuse s3's pruning sounds: granular decomposition with a terminal heartbeat files as a death, not a discarded thought."
+  },
+  {
+   "id": "s6",
+   "name": "The Readiness",
+   "start_est_s": 179,
+   "duration_est_s": 30.5,
+   "summary": "Stillness. After the scar, the page stops generating alternatives. No fork, no branches, no inset: short centered lines with enormous white space. Hamlet's clause-chain about the sparrow and the readiness \u2014 the most TTS-proof prose in the play, pure conditional logic a flat voice delivers better than an actor \u2014 and then 'Let be.' alone on its own line, its own cue. The film breathes out: the deliberating machine consents to finitude.",
+   "cues": [
+    {
+     "id": "c20",
+     "character": "Hamlet",
+     "text": "Not a whit, we defy augury: there's a special providence in the fall of a sparrow.",
+     "source": "V.ii",
+     "pause_before_s": 5.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "CAM has drifted from the scar down to band_readiness, (460,1195,360) \u2014 passing nothing: the film's longest camera move over blank vellum. The line writes CENTERED, not justified \u2014 the first centered text since the title. No marginalia. Nobody annotates this."
+    },
+    {
+     "id": "c21",
+     "character": "Hamlet",
+     "text": "If it be now, 'tis not to come; if it be not to come, it will be now; if it be not now, yet it will come: the readiness is all.",
+     "tts_text": "If it be now, it is not to come; if it be not to come, it will be now; if it be not now, yet it will come. The readiness is all.",
+     "source": "V.ii (F)",
+     "pause_before_s": 2.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "The clause-chain writes as three short centered lines, the pen keeping exact pace with the voice's logic gates \u2014 if/then strokes landing on the conditionals."
+    },
+    {
+     "id": "c22",
+     "character": "Hamlet",
+     "text": "Let be.",
+     "source": "V.ii (Q2-only \u2014 keep it)",
+     "pause_before_s": 2.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "A full blank line of vellum. Then, smaller, alone: 'Let be.' The pen lifts. The camera does not move for four seconds. Total stillness \u2014 the only moment in the film when page, camera, and score all stop together. Load-bearing; never trimmed under schedule pressure."
+    }
+   ],
+   "visual_beats": [
+    {
+     "when": "scene start",
+     "visual": "Drone re-enters under the camera's slow descent \u2014 thinned to the single D, fifth removed, -6 dB quieter. The candlelight warms one degree, steadying.",
+     "score": "Single-pitch drone. No ticks: there are no branches left to count."
+    },
+    {
+     "when": "after c22 (+0s, 4s duration)",
+     "visual": "Four full seconds of nothing. 'Let be.' sits in white space.",
+     "score": "Hard tacet on 'be.' \u2014 drone CUT, not faded. Silence until the first rapier stroke of s7."
+    }
+   ],
+   "score_notes": "The whole scene is a decrescendo into the film's second mandated silence. 'The readiness is all' is pure conditional logic \u2014 trust the flat voice, do not underscore it."
+  },
+  {
+   "id": "s7",
+   "name": "The Wager",
+   "start_est_s": 209.5,
+   "duration_est_s": 30.5,
+   "summary": "The duel, fast and procedural: two hands of text interleaving like crossed blades \u2014 and swapping stroke-styles at the crossing, the exchanged rapiers drawn as typography \u2014 while the heartbeat rule cashes in everything it saved. Three deaths in twenty seconds: Gertrude, Claudius under the sacred Folio direction 'Hurts the King.', Laertes \u2014 each a pulse and a wax seal, the commit log filling in real time. No deliberation remains; everything in this scene is irreversible.",
+   "cues": [
+    {
+     "id": "c23",
+     "character": "Gertrude",
+     "text": "No, no, the drink, the drink... O my dear Hamlet... the drink, the drink! I am poison'd.",
+     "tts_text": "No, no, the drink, the drink. O my dear Hamlet. The drink, the drink! I am poisoned.",
+     "source": "V.ii",
+     "pause_before_s": 4.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "Out of the s6 silence, band_duel has ruled itself as TWO interleaved text indents \u2014 Hamlet's italic from the left, Laertes's backslant from the right \u2014 with quick alternating pen-strokes crossing between them, parry and riposte as ascender and descender; at their first crossing the two lines SWAP stroke-character, each continuing in the other's hand. Her line cuts diagonally across BOTH columns \u2014 the first diagonal text on the page \u2014 and a small drawn cup at its end tips, an ink-bead running toward the ledger."
+    },
+    {
+     "id": "c24",
+     "character": "Laertes",
+     "text": "It is here, Hamlet: Hamlet, thou art slain... The treacherous instrument is in thy hand... the king, the king's to blame.",
+     "source": "V.ii",
+     "pause_before_s": 2,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "His confession writes in a wounded, deteriorating hand \u2014 letterforms losing their finials as the line proceeds. On 'the king, the king's to blame', a hairline draws itself from his words UP the page and splices into the red rubric's marginal rule: the accusation connecting to the original instruction. Attribution, at last, in writing."
+    },
+    {
+     "id": "c25",
+     "character": "Hamlet",
+     "text": "The point envenom'd too! Then, venom, to thy work.",
+     "tts_text": "The point envenomed too! Then, venom, to thy work.",
+     "source": "V.ii; the margin direction is the sacred Folio SD \u2014 written verbatim with its period, NEVER spoken",
+     "pause_before_s": 1.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "The longest blade-stroke of the film drives from his line leftward-up toward the latitude where Claudius's couplet sits \u2014 and this time it does NOT retract. Immediately after the voice stops, the sacred stage direction inscribes itself in upright italic, right-aligned at (640\u2013740,1300), verbatim: 'Hurts the King.' Written, never voiced, never modernized."
+    },
+    {
+     "id": "c26",
+     "character": "Laertes",
+     "text": "Exchange forgiveness with me, noble Hamlet.",
+     "source": "V.ii",
+     "pause_before_s": 3,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "His final line writes in the broken hand \u2014 and the two swapped, crossed indents gently UNCROSS: the strokes merge into a single shared baseline for this one line. The page forgives in typography."
+    }
+   ],
+   "visual_beats": [
+    {
+     "when": "after c23 (+0.5s)",
+     "visual": "HEARTBEAT 3 \u2014 Gertrude. Third wax seal stamps the ledger at (90,1270); the tipped cup's ink-bead reaches the seal exactly as it sets.",
+     "score": "Pulse, unaccompanied; the dry rapid ticks (the s3 lattice turned violent) resume immediately \u2014 the duel doesn't pause for grief."
+    },
+    {
+     "when": "after c25, +1s after 'Hurts the King.' completes",
+     "visual": "HEARTBEAT 4 \u2014 Claudius. Fourth seal. Simultaneously, at band_prayer's latitude offscreen, the pooled black thought-blots flare and fix \u2014 a verdict finally matching an inner state \u2014 and the telemetry gutter prints a notch for it (the camera never chases two events; the gutter testifies).",
+     "score": "Pulse; release +80 ms, the only permitted variation \u2014 the rubric's object is discharged."
+    },
+    {
+     "when": "after c26 (+1s)",
+     "visual": "HEARTBEAT 5 \u2014 Laertes. Fifth seal. The ticks stop forever; no more strokes cross the band. One person remains writing, and both surviving lines have been running venom-thin (40% stroke weight) since the crossing.",
+     "score": "Pulse, then a register purge: everything except vellum room tone exits. Setup for s8's economy of silence."
+    }
+   ],
+   "score_notes": "Three pulses in ~20 seconds \u2014 the rule the ear learned in s4 pays the film's debts at speed. Each pulse identical in patch and level (the +80 ms release on HB4 is the sole exception): commits are commits; the page does not editorialize. No melody anywhere near the fencing; rhythm only."
+  },
+  {
+   "id": "s8",
+   "name": "The Attestation",
+   "start_est_s": 240,
+   "duration_est_s": 53,
+   "summary": "Telemetry completed by testimony. Hamlet binds his witness \u2014 'report me and my cause aright', 'draw thy breath in pain, to tell my story' \u2014 making Horatio the attestation signature on the trace. Then the mandated suspense image: the final period hangs un-set, trembling sub-pixel, three and a half seconds of engineered silence \u2014 'The rest is silence.' \u2014 and the period sets as the page's ONLY gold: the output token, gilded; the sixth and last heartbeat. Horatio's goodnight (consolation), Fortinbras's machine voice stamped rather than penned, and the single unbroken shot pulls back to reveal the whole leaf: illuminated manuscript and inference trace, the same object.",
+   "cues": [
+    {
+     "id": "c27",
+     "character": "Hamlet",
+     "text": "Horatio, I am dead; / Thou livest; report me and my cause aright / To the unsatisfied.",
+     "source": "V.ii",
+     "pause_before_s": 3,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "GRAFT 4. CAM tight, (560,1320,260), on the last live line of band_duel. As he names his witness, the small Horatio margin-figure (the one who pointed true at c12) begins descending the left ledger, passing each wax seal in turn \u2014 reviewing the commit log on her way to the foot of the page."
+    },
+    {
+     "id": "c28",
+     "character": "Hamlet",
+     "text": "If thou didst ever hold me in thy heart, / Absent thee from felicity awhile, / And in this harsh world draw thy breath in pain, / To tell my story.",
+     "source": "V.ii",
+     "pause_before_s": 1.5,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "The four lines write more and more slowly, ink running drier each line, the hand failing in pressure, never in sense. On 'to tell my story' the Horatio figure reaches the ledger's foot and turns to face the text block. The pen lifts \u2014 carrying the final period with it."
+    },
+    {
+     "id": "c29",
+     "character": "Hamlet",
+     "text": "The rest is silence.",
+     "source": "V.ii",
+     "pause_before_s": 3.5,
+     "processing": "whisper",
+     "on_screen": "body-line",
+     "visual_sync": "GRAFT 5 fills this pause: THE HELD PERIOD. At the end-point of the unfinished final line, CAM at its tightest of the film (705,1332,140), the period hovers 3u above the baseline, trembling sub-pixel (\u00b10.3u random-walk, 9 Hz) for 3.5 s of ABSOLUTE tacet \u2014 room tone gated a further -6 dB so the theater itself seems to inhale. Programmer note: the tremble is positional noise on the period's own sprite, never on the camera \u2014 the page is steady; the MARK is afraid. Then the whisper: four words inscribe faint but black as spoken, and on 'silence' the period descends and SETS as a GOLD-LEAF ROUNDEL with a tiny burnishing shimmer \u2014 the only gold on the entire page, catching the candle: a point of fire in a field of ink."
+    },
+    {
+     "id": "c30",
+     "character": "Horatio",
+     "text": "Now cracks a noble heart. Good night, sweet prince, / And flights of angels sing thee to thy rest!",
+     "source": "V.ii",
+     "pause_before_s": 4,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "First colophon line, in Horatio's upright hand \u2014 the same hand that wrote c01: the record opens and closes in the witness's script. Beside it at the ledger's foot her notarial mark draws itself: an elaborate pen-knot encircling nothing, the early-modern notary's tamper-proof flourish. The trace is attested. On 'flights of angels', hairline wing-shaped cadels rise from the line's ascenders. As her line completes, THE PULL-BACK begins \u2014 slow, continuous, the film's only zoom-out."
+    },
+    {
+     "id": "c31",
+     "character": "Fortinbras",
+     "text": "...Bear Hamlet, like a soldier, to the stage... Go, bid the soldiers shoot.",
+     "source": "V.ii",
+     "pause_before_s": 1,
+     "processing": "none",
+     "on_screen": "body-line",
+     "visual_sync": "Second colophon line \u2014 STAMPED, not penned: block capitals in woodcut texture thudding in phrase by phrase (0.15 s mechanical thumps). The incoming administration does not write; it prints. The pull-back continues through the whole cue. No cannon on the soundtrack: the ordered shot is withheld \u2014 the only pulses this film permits are the six that already happened."
+    }
+   ],
+   "visual_beats": [
+    {
+     "when": "during c29, +0.5s after the period sets",
+     "visual": "SIXTH HEARTBEAT, the last: Hamlet's death and the trace's final output are the same commit. NO sixth wax seal \u2014 the gold period in-line IS the sixth commit: five red dots descend the margin and terminate at one gold point inside the text.",
+     "score": "HEARTBEAT 6, identical patch, its sub-bass tail decaying into the returning vellum room tone. Awe lives in the light on the gold, not in the score \u2014 resist any swell."
+    },
+    {
+     "when": "~275s through c31 and beyond",
+     "visual": "THE PULL-BACK: one continuous 13 s ease-out from (705,1332,200) to the full-page frame (500,707,2560 \u2014 the entire 1414-unit leaf in a 16:9 frame, candle-dark desk falling away either side). Elements enter in order: colophon and notarial knot; the duel's crossed swapped strokes and italic 'Hurts the King.'; the gold period; 'Let be.' in white space; the blank scar with its four pinned labels; the pierced arras; the rising words and sunken blots; the painted-shut Mousetrap with its verdigris tick and climbing filament; the dotted fork-feather; the circled 'globe'; the blind-impress ghost; the red rubric and its full-length rule; the blackletter title. The bottom funeral frieze \u2014 four captain glyphs bearing a horizontal figure, marching right \u2014 draws itself UNDER the receding camera: the page still alive as it assembles.",
+     "score": "Under the pull-back: the open fifth returns complete (D\u2013A restored) at its quietest level, resolving nothing, simply present \u2014 consolation as accompaniment."
+    },
+    {
+     "when": "288\u2013293s",
+     "visual": "Full frame at (500,707,2560): the page breathes once (2% luminance, caught mid-cycle), the gold period flickers one specular glint as the camera stops. Hold 2.5 s. Fade to black 2.5 s. Runtime ends \u2248 293 s.",
+     "score": "The fifth fades with the image into true silence. The film ends quieter than it began."
+    }
+   ],
+   "score_notes": "Order of feelings, enforced by sound: pain dry and close (c27\u2013c28), suspense as engineered silence (held period), awe as one low pulse plus gold light (c29), consolation as the restored fifth under Ava's unprocessed voice (c30), then the state's flat trumpetless arrival (c31, Fred, no underscore, four stamp-thumps that are unmistakably NOT heartbeats \u2014 no 52 Hz fundamental, no lub-dub pairing: ceremony, not consequence)."
+  }
+ ],
+ "page_map": {
+  "final_frame_description": "One vellum leaf, 1000x1414, candle-lit, filling the frame height at CAM(500,707,2560) with dark desk either side \u2014 and it reads as two objects at once, every mark placed on camera during the film and earning its place twice. AS ILLUMINATED MANUSCRIPT, top to bottom: a blackletter title cartouche in ink and red over a hairline 31-tick token-ruler; a rubricated incipit in vermilion \u2014 'Revenge his foule and most unnaturall murther.' \u2014 with a hairline red rule descending the full inner left margin; a secretary-hand text block opening with witness and outline-ghost lines, a blind man-shaped impress in the right gutter, and the word 'globe' circled in pen; a seven-branch stemma whose dead branches are subpuncted with red dots (text still legible), composed on four master curvatures so it reads as a gray feather; one gouache miniature of a tiny stage painted shut with torch-glare, border thickened, a verdigris tick at its NE corner and a verdigris filament climbing to the rubric's full stop; an interlinear register where hollow grey words rise and heavy black blots pool beside a kneeling crowned figure; a painted arras pierced corner-to-corner by one violent stroke, beside a marginal gloss stopped mid-letter under a drooped manicule; a band of blank vellum bearing the blind impress of erased italic, edged by leaning court grotesques and four askew fresh-ink labels pinned to nothing ('nothing' / 'madness' / 'a document in madness' / 'conceit upon her father'), a faint grain-trail crossing to the page edge; three centered lines and 'Let be.' alone in maximum white space; two interleaved text indents that cross, swap stroke-styles, and merge to one baseline, with a tipped cup, a diagonal line, the right-aligned italic 'Hurts the King.', and a final line ending in the page's ONLY gold \u2014 a burnished gold-leaf period; a two-line colophon in two hands (witness script, then stamped woodcut capitals) beside a notarial pen-knot; a tiny funeral frieze along the bottom edge. The left margin is the commit ledger: three watchmen at top, two manicules (one aimed wrong, finger drooped; one aimed true), FIVE round red wax seals descending in event order, terminating at the in-line gold period \u2014 five red dots leading to one gold point. The far-right edge is the telemetry gutter: pricking holes doubling as tick marks, a context-budget bar drained to ~15%, an EVICT notch at the scar's latitude. AS INFERENCE TRACE, the same marks: title = run header; rubric + red rule = system prompt scoping the context; text block = token stream; subpuncted stemma = speculative branches pruned but logged; miniature + verdigris tick + filament = an eval run returning PASS, looped back to the instruction it verified; risen words over pooled blots = a passing check misreading inner state; pierced arras + seal 1 = first irreversible side-effect, a write that severed a life mid-word; blank impressed band = context-eviction scar with the watchers' mislabels still pinned to it; 'Let be.' = the model ceasing to branch; crossed swapped strokes + seals 3\u20135 = a cascade of commits in a contention region; gold period = the final output token, the only emission that cost everything; colophon + pen-knot = witness attestation that makes the trace legible as a story; stamped capitals = an external imprimatur from outside the system. COLOR LEGEND, consistent everywhere: iron-gall BLACK = committed trace; light-wash GRAY under red subpunct dots = pruned thought; VERMILION = command; VERDIGRIS = verification; GOLD LEAF = the one irreversible emission (nowhere else on the page); BLANK VELLUM impress = the evicted. The enforced eye-path: title \u2192 red rubric \u2192 down the red rule past five red seals \u2192 gold period \u2192 notarial knot. The page breathes once (2% luminance) and is still; hold 2.5 s; fade.",
+  "regions": [
+   {
+    "id": "title",
+    "x": 120,
+    "y": 36,
+    "w": 760,
+    "h": 76,
+    "content": "Blackletter title cartouche, ink + red flourishes, NO gold: 'The Tragicall Historie of HAMLET Prince of Denmarke' (sacred verbatim, never modernized, never spoken). Written 0:01\u20130:08. Beneath it, a hairline token-ruler of 31 ticks, one per cue."
+   },
+   {
+    "id": "rubric",
+    "x": 180,
+    "y": 130,
+    "w": 640,
+    "h": 44,
+    "content": "Rubricated incipit in vermilion, the system prompt: 'Revenge his foule and most unnaturall murther.' (sacred Q2 verbatim, spoken once by the Ghost as it inscribes, c03). Its full stop at (812,160) is the root node; a hairline red rule descends from the initial letter down the inner left margin to the colophon \u2014 the instruction's scope. Laertes's c24 accusation hairline splices into the rule from below; the verdigris filament from the eval meets the full stop at c12, re-wetting the red once."
+   },
+   {
+    "id": "margin_left_ledger",
+    "x": 36,
+    "y": 130,
+    "w": 110,
+    "h": 1160,
+    "content": "The commit ledger / witness column. Top: three watch figures (s1). Polonius's mis-aimed manicule + gloss at fork latitude (c06; gloss trail stopped mid-letter and finger drooped 30 degrees at c15). The TRUE manicule + small Horatio figure at verification latitude (c12); the figure descends the ledger during c27\u2013c28. FIVE red wax seals at the latitudes of their events: closet (90,985, HB1), eviction (90,1100, HB2), duel (90,1270 / 90,1295 / 90,1318, HB3\u20135). NO sixth seal \u2014 the sixth commit is the in-line gold period. Foot: Horatio's notarial pen-knot, drawn during c30."
+   },
+   {
+    "id": "band_ghost",
+    "x": 180,
+    "y": 200,
+    "w": 560,
+    "h": 130,
+    "content": "The watch and the Ghost: c01 in upright witness hand, halted mid-line; c02/c04 in hollow OUTLINE letters (unfilled ink); c05 in Hamlet's slanted hand with 'globe' circled at (565,310) \u2014 circle survives to the final frame. The Ghost's man-shaped blind impress sits at the band's right edge / top of margin_right_inner, at (790,250)."
+   },
+   {
+    "id": "band_fork",
+    "x": 180,
+    "y": 350,
+    "w": 560,
+    "h": 230,
+    "content": "The fork: c07 couplet at top; at c08's 'question' the ruled line splits 2\u21924\u21927 into a stemma, each branch carrying a faint light-wash phrase (sleep / dream / bare bodkin / bear those ills...); all branches share four master curvatures (the dead fan must read as a feather); all subpuncted with red deletion dots during c09 \u2014 dead but legible. One surviving hairline exits the diagram's foot into band_eval."
+   },
+   {
+    "id": "band_eval",
+    "x": 180,
+    "y": 600,
+    "w": 560,
+    "h": 170,
+    "content": "The eval: text lines flanking the nested inset; c12 verification line ('I'll take the ghost's word...') directly beneath the inset, marked by the ledger's true manicule and the small Horatio figure."
+   },
+   {
+    "id": "inset_mousetrap",
+    "x": 400,
+    "y": 600,
+    "w": 220,
+    "h": 150,
+    "content": "The only picture on the page: Mousetrap miniature in flat gold-less gouache \u2014 double-ruled border with corner rosettes (ruled in advance during c07), tiny stage, sleeping player-king, poisoner with vial; interior animates at 8 fps vs the page's 24. Gertrude's c10 on a banderole from a painted spectator in the lower border. At c11: flooded with orange torch-glare, painted shut, border strokes 3x, VERDIGRIS PASS tick at NE corner (612,606). In the final frame: a sealed test cell that returned PASS."
+   },
+   {
+    "id": "verdigris_loop",
+    "x": 610,
+    "y": 150,
+    "w": 215,
+    "h": 470,
+    "content": "Hairline overlay crossing other regions (render above them): a verdigris filament drawn during c12 from the PASS tick (612,606), along the inset's top edge, up the inner edge of the right gutter at x~815, to the rubric's full stop (812,160). The verification loop, closed \u2014 verdigris appears nowhere else except the tick itself."
+   },
+   {
+    "id": "band_prayer",
+    "x": 180,
+    "y": 790,
+    "w": 560,
+    "h": 130,
+    "content": "The double misread: c13 with interlinear gloss-mark on 'scann'd' and the retracted blade-stroke's faint ink-shadow; c14 couplet on the baseline with hollow grey word-copies risen into the interlinear space and heavy black thought-blots pooled below at (800,915) under the kneeling figure \u2014 fixed forever, flaring once at HB4. The kneeling crowned Claudius figure (donor-portrait pose, crown under arm) is painted in the adjacent right gutter at (800,840)."
+   },
+   {
+    "id": "band_closet",
+    "x": 180,
+    "y": 940,
+    "w": 560,
+    "h": 90,
+    "content": "The arras: painted drapery over the band's right third (x560\u2013740), pierced corner-to-corner by a single never-retracted stroke; c15 emerging half-hidden under the curtain's edge, its written line stopped mid-letter; c16 beneath. Wax seal 1 in the ledger at this latitude."
+   },
+   {
+    "id": "band_ophelia",
+    "x": 180,
+    "y": 1050,
+    "w": 560,
+    "h": 100,
+    "content": "THE SCAR. During the film: c17 in fine, perfectly level italic (the straightest line on the page); c18's tall gloss alongside in the gutter; c19 granulating off the page. In the final frame: blank vellum bearing the blind impress of every evicted letter (raking light), edged by the grotesques' four pinned labels in fresher darker ink \u2014 'nothing' / 'madness' / 'a document in madness' / 'conceit upon her father' \u2014 none matching what she wrote; faint grain-trail crossing the gutter to the page edge. The only blank band on the page. Wax seal 2 at this latitude; EVICT notch in the telemetry gutter."
+   },
+   {
+    "id": "band_readiness",
+    "x": 180,
+    "y": 1170,
+    "w": 560,
+    "h": 70,
+    "content": "Centered, unannotated: c20; c21's three clause-chain lines; one full blank vellum line; then 'Let be.' alone, smaller. Maximum white space of any inked band."
+   },
+   {
+    "id": "band_duel",
+    "x": 180,
+    "y": 1260,
+    "w": 560,
+    "h": 80,
+    "content": "The arena: two interleaved text indents \u2014 Hamlet's italic entering left, Laertes's backslant entering right \u2014 crossed by rapier pen-strokes, stroke-styles SWAPPED at the first crossing (exchanged rapiers as typography), both running venom-thin (40% weight) after; c23 diagonal across both columns with tipped cup and ink-bead running to seal 3; c24 in a deteriorating hand, its accusation hairline splicing up into the red rule; sacred right-aligned italic 'Hurts the King.' at (640\u2013740,1300) \u2014 written, never spoken, never modernized; c26 on a merged shared baseline; the final line at y1330 ending in the GOLD-LEAF PERIOD at (705,1332) \u2014 the page's only gold, the sixth commit, the output token, with 'The rest is silence.' faint but black to its left."
+   },
+   {
+    "id": "colophon",
+    "x": 180,
+    "y": 1350,
+    "w": 560,
+    "h": 56,
+    "content": "Two lines, two hands: c30 in Horatio's upright witness script (the same hand as c01 \u2014 the record opens and closes in the witness's hand) with wing-shaped cadels rising from its ascenders, beside her notarial pen-knot at the ledger foot; c31 in STAMPED woodcut block capitals \u2014 printed, not penned. Below, on the page's bottom edge (y1374\u20131402), the funeral frieze: four captain glyphs bearing a horizontal figure, marching right, drawn under the receding camera."
+   },
+   {
+    "id": "margin_right_inner",
+    "x": 770,
+    "y": 200,
+    "w": 160,
+    "h": 1140,
+    "content": "The inner-state gutter: the Ghost's man-shaped blind impress (top, ~(790,250)); the kneeling Claudius figure with pooled thought-blots (prayer latitude); c18's tall gloss and the cluster of leaning court grotesques with their four pinned labels (scar latitude); the permanent faint grain-trail crossing to the page edge where Ophelia's context left the window."
+   },
+   {
+    "id": "telemetry_gutter",
+    "x": 940,
+    "y": 130,
+    "w": 36,
+    "h": 1230,
+    "content": "Far-right edge, double-reading: a column of pricking holes (the manuscript ruler's apparatus) that is ALSO the telemetry tick-track; a context-budget bar draining top-to-bottom across the film, ending at ~15%; EVICT notch at (956,1090) printed the moment Ophelia's last grain exits; one notch per off-frame event (simultaneity rule \u2014 when the camera commits to one event, the gutter testifies to the other). Must be legible in the final frame."
+   }
+  ]
+ },
+ "production_notes": "EDITION & TEXT. Base: First Folio (1623), modern spelling, Q2 where cited. Three SACRED strings, displayed verbatim, never modernized: (1) the title 'The Tragicall Historie of HAMLET Prince of Denmarke' (written only, never spoken); (2) the rubric 'Revenge his foule and most unnaturall murther.' (Q2; spoken once at c03 \u2014 tts respells only foule\u2192foul, unnaturall\u2192unnatural; 'murther' is SPOKEN AS WRITTEN); (3) 'Hurts the King.' (F stage direction, period included \u2014 written, NEVER voiced). Display ellipses mark elisions and are silent; never let the synthesizer speak '\u2026' (tts_text strips them to commas). The IV.v Gentleman's report is Horatio's per the Folio's consolidation \u2014 a textual reassignment, not an invention. 'Let be.' is Q2-only; it gets its own cue and its own silence.\n\nBUDGET ACCOUNTING (verified). 31 cues (cap 32). Per-cue speech estimates at ~2.7 w/s (s): c01 5.5, c02 5.5, c03 3.0, c04 2.5, c05 6.0, c06 3.5, c07 4.5, c08 4.0, c09 7.5, c10 3.0, c11 2.0, c12 5.0, c13 11.5, c14 6.0, c15 1.5, c16 5.0, c17 5.0, c18 11.5, c19 4.5 (+3.5 grain tail), c20 6.5, c21 11.5, c22 1.0, c23 6.5, c24 8.0, c25 3.5, c26 2.5, c27 6.0, c28 11.0, c29 2.0, c30 7.0, c31 5.0 \u2014 total \u2248167.5 s (budget 150\u2013190 \u2713). Longest cues (c13, c18, c21, c28) \u2264 ~11.5 s \u2713. Pauses sum 110 s; speech 167.5 + tail 3.5 + pauses 110 = 281 s at c31 voice-end; pull-back completes 288, hold 2.5, fade 2.5 \u2192 RUNTIME 293 s (cap 295 \u2713). Scene boundaries vs treatment skeleton (20/52/90/152/189/217/250): 18/45.5/81/143/179/209.5/240 \u2014 every shift \u226410 s \u2713. Heartbeats land \u2248133 / 176.5 / 217 / 233.5 / 238 / 264.5 \u2014 no two within 4 s \u2713. If recorded cues run long, reclaim from pause_before of c10, c13, c20 and the s8 glide. NEVER shorten: the held period (3.5 s, locked), the post-'Let be.' stillness (4 s, min 3), the 2 s pre-c17 tacet, or any heartbeat spacing.\n\nTTS SESSION. Voice names VERIFIED INSTALLED via say -v '?': Jamie (Premium), Daniel, Ava (Premium), Tom (Enhanced), Moira, Zoe (Premium), Evan (Enhanced), Kathy, Fred \u2014 use exactly these strings. Render each cue dry: say -v \"<voice>\" -r <rate_wpm> -o cNN.aiff --data-format=LEF32@22050 \"<tts_text or text>\". Verify by ear: usurpst (c01), Doomed (c02), murther-spoken vs murther-displayed (c03), in it (c06), do it / scanned (c13), 'tis\u2192it is (c21), poisoned (c23), envenomed (c25). c15: synthesize the full 'O, I am slain', hard-gate the file ~60% through 'slain' \u2014 an edit, not a fade; the written line stops mid-letter on the same frame. Zoe c17 is the film's reference capture \u2014 re-record until zero artifact; it is the proof-of-life the eviction is measured against.\n\nPROCESSING CHAINS (WebAudio offline render). ghost1 = ConvolverNode (4.5 s cathedral IR, 35% wet) \u2192 lowpass 2.2 kHz \u2192 detune \u22122 st. ghost2 = ghost1 \u2192 bandpass 300\u20131800 Hz \u2192 5 Hz tremolo, wet 55%. granulate-tail (c19) = dry until mid-'sweet ladies', final ~2.5 s in 40\u201380 ms grains, randomized order/pan \u00b10.8, density \u21920 over 3.5 s, synced so the last audio grain and last visual grain die together. whisper (c29) = gain \u22126 dB, highshelf \u22124 dB @ 4 kHz, fully dry. cutoff-mid-word (c15) = hard gate, see above. Tom's c14 sub-octave murmur is SCORE-side (\u221212 st copy, LP 220 Hz, \u221214 dB), not voice FX. All else: none \u2014 flatness is the aesthetic; do not sweeten.\n\nHEARTBEAT RULE (graft 6, absolute). ONE patch, used exactly SIX times: 52 Hz sine lub-dub (120 ms + 90 ms hits, 280 ms apart), lowpass 120 Hz, 600 ms sidechain duck (\u22123 dB) on everything else, 1px page shudder, identical level each time. (1) Polonius, after the c15 cutoff; (2) eviction completing, the instant the last grain exits after c19; (3) Gertrude, after c23; (4) Claudius, ~1 s after 'Hurts the King.' completes (release +80 ms \u2014 the only variation); (5) Laertes, after c26; (6) the gold period setting on 'silence' in c29 \u2014 Hamlet's death and the final output are the same commit; no sixth wax seal. NEVER during deliberation: none in s3, none at the c13\u2192c14 deferral, none for the eval PASS, none for Fortinbras's stamps or the withheld cannon (the soldiers' shot is cut from the soundtrack entirely). Nib foley (2\u20136 kHz) must never share register with the pulse; Fortinbras's four stamp-thumps have no 52 Hz fundamental and no pairing.\n\nSCORE PALETTE. Vellum room tone (tape hiss \u221238 dB) throughout EXCEPT: 2 s full tacet before c17; total silence from HB2 until s6 start; hard cut on 'Let be.'; absolute tacet (room tone \u22126 dB further) during the held period. Drone: detuned open fifth D\u2013A; D alone for s6 (\u22126 dB); restored complete and quietest under the pull-back. The only melody is the 3-note music-box inside the Mousetrap (the fiction's own music; detunes a quarter-step at the vial). Prepared-piano tick lattice = deliberation (s3) and fencing (s7, violent); red-chalk scrape (rubric) pitched below black-ink scratch. Ticks are thought, pulses are acts \u2014 registers segregated at all times. The audience must be able to identify red-writing vs black-writing, and thought vs act, by ear alone.\n\nCAMERA. CAM(cx,cy,w) = center (cx,cy), viewport width w in page units; output 16:9 (viewport height 0.5625w); one unbroken take, pans/zooms only, no rotation, ease-in-out (moves <1 s are ease-out 'punch/rack' moves). Max pan 60 u/s except s7 (90 u/s). Close work w 260\u2013420; HARD RULE: max mid-film width 620 \u2014 the full page is never visible before the pull-back. The two framing extremes are deliberately adjacent: tightest shot of the film (w 140, the held period) directly precedes the widest (w 2560, the reveal \u2014 full 1414-unit page height in frame, dark desk either side). Pull-back: (705,1332,200)\u2192(500,707,2560), 13 s, begins as c30 completes, no keyframe dwell; the funeral frieze and Fortinbras stamps draw UNDER the receding camera. Manicules are diegetic attention pointers \u2014 when one draws itself the camera goes where it points, EXCEPT Polonius's (the camera pointedly declines; the joke is that we can see it is wrong). The held-period tremble is positional noise on the period's sprite, never on the camera. Simultaneity rule: the camera never chases two events; the telemetry gutter prints a notch for the one it misses.\n\nCOLOR LEGEND (the final frame's moral accounting): iron-gall black = committed trace; light-wash gray + red subpunct dots = pruned thought; vermilion = command; verdigris = verification (PASS tick + return filament ONLY); GOLD LEAF = the single gold period and nothing else, anywhere, ever; blank vellum impress = the evicted. Render gold as layered yellows with specular flicker on camera motion.\n\nEMOTIONAL ARC (for the animators). Curiosity (s1) \u2192 dread (s2: red instruction, circled 'globe') \u2192 dark comedy (c06's wrong finger; c15's legacy deadpan through drapery \u2014 let the laugh START, then the cutoff and HB1 kill it mid-breath; c16's 'I took thee for thy better' is the misread theme gone lethal) \u2192 grief (s5: clean voice, then granulation; the indictment is the four fresher-ink labels \u2014 the watchers, not the weights) \u2192 stillness (s6: 'Let be.' is the eye of the film) \u2192 suspense (held period: 3.5 s, the cheapest image in the film and the most expensive cut) \u2192 awe (one gold point in a field of ink; light does the work, not score) \u2192 consolation (Ava unprocessed over the restored fifth; testimony completes telemetry \u2014 the trace survives because a witness vouches for it) \u2192 the machine of state, stamped and flat (Fred, no underscore, no cannon). Every voice justifies its casting in one line: Jamie's flat logic ('the readiness is all'), Daniel's processed recession ('Remember me'), Ava's unprocessed constancy (first and second-to-last words), Tom's plausible smoothness (the passing liar), Moira's warmth inverted ('the drink, the drink'), Zoe's clarity (the mandated clean line), Evan's urgency ('the king, the king's to blame'), Kathy's datedness (the period furniture that bleeds), Fred's machinery ('Go, bid the soldiers shoot').\n\nGRAFT PLACEMENT INDEX. Graft 1 = c17 (clean line precedes granulation; pre-cue tacet + freeze). Graft 2 = c18 + pinned-labels beat (labels are Shakespeare's own court words, fresher ink, outliving her). Graft 3 = c13\u2013c14 (defer first, couplet after \u2014 the audience learns the misread after the mercy; verdigris PASS sits one band above the divergence). Graft 4 = c27 ('report me and my cause aright') + c28 ('draw thy breath in pain, to tell my story') + notarial knot. Graft 5 = the held period inside c29's pause (3.5 s, sprite-tremble, absolute tacet). Graft 6 = the six-pulse commit log (ledger above). MERGE PROVENANCE: spine, line selection, cue rhythm, six-pulse/single-gold system, wax-seal ledger and play-order from the POET draft; CAM convention, color legend, verdigris verification loop, cutoff-mid-word kill, freeze-on-clean-line, label texts, framerate split (24/6 fps words/thoughts, 24/8 page/inset), stroke-swap duel, stamped imprimatur, telemetry gutter, sprite-tremble spec and tightest-before-widest framing from the DIRECTOR draft. Resolved contradictions: 6 heartbeats not 7 (the gold token IS Hamlet's period; the chalice pearl is drawn but not gilded \u2014 vermilion-outlined cup, ink bead); gold appears once, not seven times; Polonius dies mid-word AND behind the arras (cutoff merged into the deadpan gag); Fortinbras is stamped, not radio-processed (enum compliance + the flat voice needs no mask); cannon withheld (POET) over volley thuds (DIRECTOR); voice names per verified installation.",
+ "coda_tail_s": 7
+}
