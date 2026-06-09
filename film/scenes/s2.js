@@ -31,11 +31,11 @@ export function build(film, T, ctx) {
   // Two thin offset copies of the same pose = a double-walled outline with nothing inside.
   const figX = ANCHORS.ghostImpress.x, figFootY = ANCHORS.ghostImpress.y + 28;
   film.add(ink.figure({
-    id: 's2-ghost-fig', t0: c02.start - 0.8, dur: 1.7, x: figX, y: figFootY, h: 60,
+    id: 's2-ghost-fig', t0: c02.start + 0.4, dur: 1.6, x: figX, y: figFootY, h: 60,
     pose: POSES['horatio-stand'], color: INK.iron, weight: 0.5, alpha: 0.45,
   }));
   film.add(ink.figure({
-    id: 's2-ghost-fig2', t0: c02.start - 0.6, dur: 1.7, x: figX + 2.2, y: figFootY + 1.6, h: 60,
+    id: 's2-ghost-fig2', t0: c02.start + 0.6, dur: 1.6, x: figX + 2.2, y: figFootY + 1.6, h: 60,
     pose: POSES['horatio-stand'], color: INK.iron, weight: 0.5, alpha: 0.26,
   }));
 
@@ -72,13 +72,19 @@ export function build(film, T, ctx) {
   }));
   film.ev({ t: c04.start, type: 'pluck', data: { n: 4 } });
 
-  // the figure thins: three parchment scrapes over its bbox, one per 'adieu',
-  // timed to when each word finishes writing/being spoken
+  // the figure thins: each 'adieu' overdraws one part of his shape in parchment —
+  // legs, then trunk and hands, then the head — stroke-deletion, not erasure
   const adieuAt = f => c04.start + c04.dur * f / aTxt.length;
-  const fx = figX - 26, fw = 54, fy0 = figFootY - 62;
-  film.add(ink.scrape({ id: 's2-thin1', t0: adieuAt(6) - 0.1, dur: 0.55, x: fx, y: fy0, w: fw, h: 23, strength: 0.5 }));
-  film.add(ink.scrape({ id: 's2-thin2', t0: adieuAt(13) - 0.1, dur: 0.55, x: fx, y: fy0 + 21, w: fw, h: 23, strength: 0.5 }));
-  film.add(ink.scrape({ id: 's2-thin3', t0: adieuAt(20) - 0.1, dur: 0.6, x: fx, y: fy0 + 42, w: fw, h: 24, strength: 0.5 }));
+  const pose = POSES['horatio-stand'];
+  const poseP = st => st.pts.map(([px, py]) => ({ x: figX + 1.1 + (px - 0.5) * 60 * 0.72, y: figFootY + 0.8 + (py - 1) * 60 }));
+  const erase = [[2, 3], [1, 4], [0]];                 // stroke indices: legs / trunk+hands / head
+  const eraseAt = [adieuAt(6), adieuAt(13), adieuAt(20)];
+  erase.forEach((grp, gi) => grp.forEach((si, j) => {
+    film.add(ink.stroke({
+      id: `s2-unghost-${gi}-${j}`, t0: eraseAt[gi] - 0.1, dur: 0.45,
+      pts: poseP(pose.strokes[si]), w: 6, color: INK.parchment, alpha: 0.82, taper: 0.05,
+    }));
+  }));
 
   // on 'Remember me' the last outline collapses into a blind impress — embossed, no ink
   film.add(ink.impressText({
@@ -131,9 +137,9 @@ export function build(film, T, ctx) {
   film.cam(CAM(26.45, 650, 262, 320));
   film.cam(CAM(29.9, 460, 162, 560));   // tilt up: the command begins
   film.cam(CAM(31.75, 545, 160, 560));  // drift with the nib; the period sets at the anchor
-  film.cam(CAM(34.85, 640, 295, 380));  // back down to the gutter for the adieus
-  film.cam(CAM(37.5, 640, 295, 380));
-  film.cam(CAM(40.7, 445, 320, 460));   // left to Hamlet's reply
+  film.cam(CAM(34.85, 655, 295, 380));  // back down to the gutter for the adieus
+  film.cam(CAM(37.5, 655, 295, 380));
+  film.cam(CAM(40.8, 445, 320, 460));   // left to Hamlet's reply
   film.cam(CAM(47.2, 445, 320, 460));
   film.cam(CAM(T.end - 0.02, 500, 330, 380));
 }

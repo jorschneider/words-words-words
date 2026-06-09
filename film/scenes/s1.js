@@ -4,10 +4,10 @@
 // three watchmen materialize in the left margin and a hollow letterform
 // passes between the letterforms and drifts down, uncommitted.
 
-import { INK, rnd, clamp01, smooth } from '../engine.js';
+import { INK, clamp01, smooth } from '../engine.js';
 import * as ink from '../ink.js';
 import { POSES } from '../figures.js';
-import { REGIONS, ANCHORS, BODY, lineY, colX, CAM } from '../layout.js';
+import { REGIONS, BODY, lineY, colX, CAM } from '../layout.js';
 
 export function build(film, T, ctx) {
   const c01 = T.cues['c01'];
@@ -126,17 +126,16 @@ export function build(film, T, ctx) {
   });
 
   // ------------------------------------------------------------ camera
-  // Open on the title; hold while it writes; drop down the page to settle on
-  // the first ruled line of band_ghost as Horatio speaks. During the cue the
-  // camera drifts almost imperceptibly right with the nib (the line is wider
-  // than the scripted frame — the halt on 'speak' must be seen), then recoils
-  // to the scripted (470,265,300) as the watch materializes, and holds for s2.
+  // Open on the title; hold while it writes; drop down-left to the head of the
+  // first ruled line of band_ghost as Horatio speaks. During the cue the camera
+  // tracks slowly right with the nib (the line is wider than any one frame —
+  // the nib must enter at the left and the halt on 'speak' must be seen), then
+  // recoils to the scripted (470,265,300) as the watch materializes; holds for s2.
   film.cam(CAM(T.start, 500, 74, 420));
-  film.cam(CAM(5.55, 500, 74, 420));
-  film.cam(CAM(c01.start, 470, 265, 300, 'smooth'));
+  film.cam(CAM(4.8, 500, 74, 420));
+  film.cam(CAM(c01.start, 344, 265, 310, 'smooth'));
   film.cam(CAM(c01.end, 528, 265, 390, 'linear'));
   film.cam(CAM(tWatch, 490, 265, 330, 'smooth'));
-  film.cam(CAM(T.end, 110, 224, 200)); // DEBUG margin
-
+  film.cam(CAM(T.end, 470, 265, 300, 'smooth'));
 
 }

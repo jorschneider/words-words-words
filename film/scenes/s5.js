@@ -144,8 +144,8 @@ export function build(film, T, ctx) {
     const gy = 1085 + Math.sin(i * 1.15) * 3.2 + u * 4;
     film.add(ink.stroke({
       id: 's5-grain-' + i, t0: gT + 0.7 + u * (lastGrainT - gT - 0.7), dur: 0.3,
-      pts: [{ x: gx - 3.4, y: gy + 1 }, { x: gx + 3.4, y: gy - 1 }],
-      w: 1.3, color: INK.ghost, alpha: 0.5, taper: 0.3,
+      pts: [{ x: gx - 4.2, y: gy + 1.2 }, { x: gx + 4.2, y: gy - 1.2 }],
+      w: 1.8, color: INK.ghost, alpha: 0.5, taper: 0.3,
     }));
   }
 

@@ -137,7 +137,7 @@ export function build(film, T, ctx) {
   film.ev({ t: c12.start + 0.5, type: 'manicule' });
   film.add(ink.figure({
     id: 's4-horatio', t0: c12.start + 1.4, dur: 1.2,
-    x: 60, y: 656, h: 30, pose: POSES['horatio-stand'],
+    x: 95, y: 688, h: 30, pose: POSES['horatio-stand'],
   }));
 
   // ================================================== (C) THE DOUBLE MISREAD
@@ -180,9 +180,9 @@ export function build(film, T, ctx) {
 
   // ...and the thought-blots pool below the kneeling figure, and stop dead
   [
-    { t: 122.2, x: 793, y: 909, r: 8 },
-    { t: 123.5, x: 805, y: 919, r: 10 },
-    { t: 124.7, x: 796, y: 926, r: 7 },
+    { t: 122.2, x: 791, y: 908, r: 8 },
+    { t: 123.5, x: 801, y: 918, r: 9 },
+    { t: 124.7, x: 794, y: 927, r: 7 },
   ].forEach((b, i) => film.add(ink.blot({
     id: 's4-thought' + i, t0: b.t, dur: 1.6, x: b.x, y: b.y, r: b.r, tendrils: 2,
   })));
@@ -230,13 +230,14 @@ export function build(film, T, ctx) {
     CAM(T.start, 520, 560, 520),               // opening, from s3
     CAM(88.0, 510, 665, 420),                  // settle on the miniature
     CAM(96.6, 510, 665, 420),                  // hold through c10–c11
-    CAM(97.9, 480, 690, 620, 'out'),           // "away!" — punch out fast
-    CAM(103.5, 385, 680, 620),                 // drift left with the verification
-    CAM(105.5, 385, 680, 620),                 // hold
-    CAM(109.2, 515, 845, 620),                 // track down to the prayer band
-    CAM(126.8, 515, 845, 620),                 // hold the double register
+    CAM(98.1, 430, 685, 620, 'out'),           // "away!" — punch out fast
+    CAM(101.0, 380, 680, 620),                 // drift left: manicule enters frame
+    CAM(105.2, 380, 680, 620),                 // hold the verification tableau
+    CAM(109.4, 503, 880, 620),                 // track down to the prayer band
+    CAM(126.8, 503, 880, 620),                 // hold the double register
     CAM(130.7, 380, 985, 600),                 // descend to the closet, arras right
-    CAM(138.8, 380, 985, 600),                 // hold: pierce, heartbeat, seal, c16
-    CAM(T.end, 560, 990, 400),                 // drift to the curtain — s5 opens here
+    CAM(139.0, 380, 985, 600),                 // hold: pierce, heartbeat, seal, c16
+    CAM(141.4, 480, 990, 500),                 // drift toward the curtain...
+    CAM(T.end, 560, 990, 400),                 // ...where the wrong name lies — s5
   ]);
 }

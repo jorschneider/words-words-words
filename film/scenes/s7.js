@@ -30,64 +30,66 @@ export function build(film, T, ctx) {
   }));
   pluck(S + 1.0);
 
-  // The crossed rapier strokes — an X between the columns. After this, the
-  // styles swap: Hamlet writes roman, Laertes italic, both venom-thin.
+  // The crossed rapier strokes — an X between the columns, just clear of s6's
+  // 'Let be.' (which holds the band's exact centre). After this, the styles
+  // swap: Hamlet writes roman, Laertes italic, both venom-thin.
   film.add(ink.stroke({
     id: 's7-rapierA', t0: S + 1.5, dur: 0.22, w: 1.6, taper: 0.22,
-    pts: [{ x: 428, y: 1287 }, { x: 458, y: 1279 }, { x: 487, y: 1271 }, { x: 512, y: 1264 }],
+    pts: [{ x: 497, y: 1281 }, { x: 524, y: 1274 }, { x: 551, y: 1268 }, { x: 575, y: 1263 }],
   }));
   film.ev({ t: S + 1.5, type: 'strike' });
   film.add(ink.stroke({
     id: 's7-rapierB', t0: S + 1.8, dur: 0.22, w: 1.6, taper: 0.22,
-    pts: [{ x: 430, y: 1264 }, { x: 461, y: 1272 }, { x: 489, y: 1280 }, { x: 512, y: 1287 }],
+    pts: [{ x: 499, y: 1263 }, { x: 526, y: 1270 }, { x: 552, y: 1276 }, { x: 575, y: 1281 }],
   }));
   film.ev({ t: S + 1.8, type: 'strike' });
 
   // ================================================== (3) c23 — GERTRUDE
   // Her line cuts DIAGONALLY across both columns: three steps down-right.
   film.add(ink.writeText({
-    id: 's7-c23a', t0: c23.start, dur: 2.2, x: 250, y: 1268,
+    id: 's7-c23a', t0: c23.start, dur: 2.2, x: 262, y: 1267,
     size: 14, style: 'italic', jitter: 1.3, text: 'No, no, the drink, the drink...',
   }));
   pluck(c23.start);
   film.add(ink.writeText({
-    id: 's7-c23b', t0: c23.start + 2.5, dur: 1.7, x: 340, y: 1280,
+    id: 's7-c23b', t0: c23.start + 2.5, dur: 1.7, x: 322, y: 1280,
     size: 14, style: 'italic', jitter: 1.3, text: 'O my dear Hamlet...',
   }));
   pluck(c23.start + 2.5);
   film.add(ink.writeText({
-    id: 's7-c23c', t0: c23.start + 4.4, dur: c23.dur - 4.45, x: 430, y: 1292,
+    id: 's7-c23c', t0: c23.start + 4.4, dur: c23.dur - 4.45, x: 430, y: 1293,
     size: 14, style: 'italic', jitter: 1.3, text: "the drink, the drink! I am poison'd.",
   }));
   pluck(c23.start + 4.4);
 
   // The tipped cup: three thin rubric strokes forming a chalice fallen on its
-  // side at her line's head, mouth toward the margin.
+  // side above her line's head, mouth toward the margin.
   const cupT = c23.start + 0.4;
   film.add(ink.stroke({
-    id: 's7-cup-bowl', t0: cupT, dur: 0.35, w: 0.9, color: INK.rubric, taper: 0.2,
-    pts: [{ x: 237, y: 1256 }, { x: 244.5, y: 1261 }, { x: 238, y: 1266.5 }],
+    id: 's7-cup-bowl', t0: cupT, dur: 0.35, w: 1.1, color: INK.rubric, taper: 0.2,
+    pts: [{ x: 235, y: 1241 }, { x: 242, y: 1240 }, { x: 247, y: 1245 },
+          { x: 246.5, y: 1251 }, { x: 240, y: 1254.5 }],
   }));
   film.add(ink.stroke({
-    id: 's7-cup-stem', t0: cupT + 0.3, dur: 0.25, w: 0.9, color: INK.rubric, taper: 0.2,
-    pts: [{ x: 244.5, y: 1261 }, { x: 249, y: 1258.5 }],
+    id: 's7-cup-stem', t0: cupT + 0.3, dur: 0.25, w: 1.1, color: INK.rubric, taper: 0.2,
+    pts: [{ x: 247, y: 1248 }, { x: 253, y: 1245 }],
   }));
   film.add(ink.stroke({
-    id: 's7-cup-foot', t0: cupT + 0.55, dur: 0.25, w: 0.9, color: INK.rubric, taper: 0.2,
-    pts: [{ x: 247.5, y: 1255.5 }, { x: 251, y: 1261 }],
+    id: 's7-cup-foot', t0: cupT + 0.55, dur: 0.25, w: 1.1, color: INK.rubric, taper: 0.2,
+    pts: [{ x: 251, y: 1240.5 }, { x: 255, y: 1248 }],
   }));
 
   // The ink bead at the cup's mouth, and the hairline running LEFT to the
   // ledger — reaching seal 3 exactly as it sets.
   film.add(ink.blot({
-    id: 's7-c23-bead', t0: c23.start + 1.8, dur: 0.9, x: 233, y: 1264, r: 2.5, tendrils: 1,
+    id: 's7-c23-bead', t0: c23.start + 1.8, dur: 0.9, x: 231, y: 1252, r: 1.6, tendrils: 0,
   }));
   const hb3 = c23.end + 0.5;
   const runT0 = c23.start + 2.2;
   film.add(ink.stroke({
     id: 's7-c23-run', t0: runT0, dur: hb3 - runT0, w: 0.7, taper: 0.08,
-    pts: [{ x: 233, y: 1264 }, { x: 204, y: 1267 }, { x: 168, y: 1268.5 },
-          { x: 128, y: 1269.5 }, { x: 96, y: 1270 }],
+    pts: [{ x: 231, y: 1253 }, { x: 202, y: 1259 }, { x: 168, y: 1263 },
+          { x: 128, y: 1267 }, { x: 96, y: 1270 }],
   }));
 
   // HEARTBEAT 3 — Gertrude. Seal 3 stamps; her figure sinks in the right gutter.
@@ -108,7 +110,7 @@ export function build(film, T, ctx) {
   pluck(c24.start);
   const c24bT = c24.start + 5.0;
   film.add(ink.writeText({
-    id: 's7-c24b', t0: c24bT, dur: c24.end - c24bT, x: 740, y: 1264, align: 'right',
+    id: 's7-c24b', t0: c24bT, dur: c24.end - c24bT, x: 640, y: 1264, align: 'right',
     size: 13.5, style: 'italic', jitter: 2.2, alpha: 0.7,
     text: "the king, the king's to blame.",
   }));
@@ -118,8 +120,8 @@ export function build(film, T, ctx) {
   // the red rule — attribution, at last, in writing.
   film.add(ink.stroke({
     id: 's7-c24-accuse', t0: c24.start + 5.7, dur: 2.4, w: 0.7, taper: 0.1,
-    pts: [{ x: 741, y: 1261 }, { x: 718, y: 1267 }, { x: 600, y: 1268 },
-          { x: 470, y: 1258 }, { x: 300, y: 1247 }, { x: 210, y: 1242 },
+    pts: [{ x: 641, y: 1261 }, { x: 612, y: 1265 }, { x: 540, y: 1261 },
+          { x: 470, y: 1251 }, { x: 320, y: 1239 }, { x: 240, y: 1234 },
           { x: ANCHORS.redRuleX, y: 1240 }],
   }));
 
@@ -175,15 +177,15 @@ export function build(film, T, ctx) {
   // ================================================== CAMERA
   film.cam([
     CAM(S, 520, 1230, 300),                      // opening — handed off from s6
-    CAM(S + 2.5, 470, 1280, 330),                // settle on the arena
-    CAM(S + 3.5, 470, 1280, 330),                // hold through the rapier X
-    CAM(c23.start + 0.6, 345, 1272, 285, 'out'), // punch-in: the tipped cup
+    CAM(S + 2.3, 465, 1260, 560),                // widen: the whole arena, both hands
+    CAM(S + 3.5, 465, 1260, 560),                // hold through the rapier X
+    CAM(c23.start + 0.6, 340, 1265, 290, 'out'), // punch-in: the tipped cup
     CAM(c23.start + 5.8, 450, 1286, 330),        // drift down-right with her diagonal
     CAM(c23.end + 1.45, 470, 1282, 340),         // hold through heartbeat 3
     CAM(c24.start + 1.6, 595, 1266, 310),        // over to Laertes's confession
     CAM(c24.start + 5.2, 600, 1264, 300),        // hold as the accusation begins
-    CAM(c24.start + 5.9, 655, 1260, 270, 'out'), // punch-in: the hairline launches
-    CAM(c25.start + 0.2, 350, 1248, 380),        // follow it left to the red-rule splice
+    CAM(c24.start + 5.9, 612, 1258, 270, 'out'), // punch-in: the hairline launches
+    CAM(c25.start + 0.2, 343, 1246, 380),        // follow it left to the red-rule splice
     CAM(c25.end - 0.05, 545, 1290, 360),         // drift down-right along c25's line
     CAM(c25.end + 0.75, 620, 1297, 300, 'out'),  // punch-in: the sacred line writes
     CAM(c26.end - 1.0, 540, 1300, 300),          // pull to the merged baseline

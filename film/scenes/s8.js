@@ -21,23 +21,22 @@ export function build(film, T, ctx) {
   const X0 = 190, XEND = GP.x - 17;         // text ends ~688, just left of the period
   let sz = 14.5;
   let gap = ink.glyphW(' ', sz, 'italic') * 1.4;
-  let w1 = ink.textW(SEG1, sz, 'italic'), w2 = ink.textW(SEG2, sz, 'italic');
+  const w1 = ink.textW(SEG1, sz, 'italic'), w2 = ink.textW(SEG2, sz, 'italic');
   let spacing = (XEND - X0 - gap - w1 - w2) / (SEG1.length + SEG2.length);
   if (spacing < -0.25) {                    // too long at 14.5: shrink instead of crushing
     sz = sz * (XEND - X0 - gap) / (w1 + w2);
-    gap = ink.glyphW(' ', sz, 'italic') * 1.4;
-    w1 = ink.textW(SEG1, sz, 'italic'); w2 = ink.textW(SEG2, sz, 'italic');
-    spacing = (XEND - X0 - gap - w1 - w2) / (SEG1.length + SEG2.length);
+    spacing = 0;
   }
-  if (spacing > 0.9) spacing = 0.9;
-  const x2 = X0 + ink.textW(SEG1, sz, 'italic', spacing) + gap;
+  if (spacing > 0.55) spacing = 0.55;       // any leftover slack becomes the pen-lift gap
 
   film.add(ink.writeText({ id: 's8-c27', t0: c27.start, dur: c27.dur,
     x: X0, y: LINE_Y, size: sz, style: 'italic', text: SEG1, spacing }));
   film.ev({ t: c27.start, type: 'pluck', data: { n: 27 } });
 
+  // c28 is right-aligned so 'to tell my story' lands exactly left of the period.
   film.add(ink.writeText({ id: 's8-c28', t0: c28.start, dur: c28.dur,
-    x: x2, y: LINE_Y, size: sz, style: 'italic', text: SEG2, spacing, alpha: 0.86 }));
+    x: XEND, y: LINE_Y, size: sz, style: 'italic', text: SEG2, spacing,
+    align: 'right', alpha: 0.86 }));
   film.ev({ t: c28.start, type: 'pluck', data: { n: 28 } });
 
   // The witness coming down the ledger: two small instances of the same figure,
@@ -88,7 +87,7 @@ export function build(film, T, ctx) {
 
   // THE GOLD PERIOD — the page's ONLY gold.
   film.add(ink.goldStamp({ id: 's8-gold-period', t0: goldT, dur: 0.9,
-    x: GP.x, y: GP.y, size: 15, text: '.' }));
+    x: GP.x, y: GP.y, size: 18, text: '.' }));
   film.ev({ t: c29.end + 0.2, type: 'bell' });
   film.ev({ t: c29.end + 0.3, type: 'heartbeat' });            // HB6, the last
   film.ev({ t: c29.end + 0.6, type: 'mute', data: { dur: 3.2 } });
@@ -194,12 +193,13 @@ export function build(film, T, ctx) {
     CAM(c27.end, 480, 1318, 300),                          // hold through c27
     CAM(c28.start + 3.2, 270, 1326, 330, 'smooth'),        // left: the witness at the foot
     CAM(c28.start + 4.4, 270, 1326, 330),                  // a beat on her
-    CAM(c28.end + 1.5, 705, 1332, 140, 'smooth'),          // THE DIVE across the dying line
-    CAM(c29.end + 1.0, 705, 1332, 140),                    // dead still through the silence
-    CAM(c29.end + 2.0, 690, 1330, 170, 'smooth'),          // tiny widen: the gold's glint
+    CAM(c28.end + 1.5, 688, 1344, 140, 'smooth'),          // THE DIVE across the dying line
+    CAM(c29.end + 1.0, 688, 1344, 140),                    // dead still through the silence
+    CAM(c29.end + 2.0, 672, 1354, 170, 'smooth'),          // tiny widen: the gold's glint
     CAM(c30.start + 1.6, 480, 1360, 300, 'smooth'),        // down-left to the colophon
     CAM(c30.start + 3.2, 480, 1360, 300),                  // hold on the witness's hand
     CAM(281.7, 705, 1332, 200, 'smooth'),                  // return to the gold
+    CAM(284.8, 640, 1300, 560, 'smooth'),                  // low and widening: stamps + frieze land in frame
     CAM(294.7, 500, 707, 2560, 'smooth'),                  // THE PULL-BACK: the whole leaf
   ]);
 }
