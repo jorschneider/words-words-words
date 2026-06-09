@@ -32,7 +32,7 @@ function mulberry32(a) {                  // fast deterministic PRNG for buffers
 
 // mix levels, pre score-bus: pedal/room barely conscious, plucks quiet on top
 const LVL = {
-  pedal: 0.10, room: 0.05, tick: 0.012, pluck: 0.45,
+  pedal: 0.085, room: 0.05, tick: 0.012, pluck: 0.6,
   branch: 0.035, strike: 0.10, manicule: 0.07, inset: 0.022,
   heart: 0.5, ophNote: 0.05, ophGrain: 0.4, bell: 0.17, triad: 0.035,
 };

@@ -82,18 +82,27 @@ function goertzel(x, f, a, b) {   // normalized magnitude (~amplitude/2 of a sin
   const p = s1 * s1 + s2 * s2 - 2 * cw * s1 * s2;
   return Math.sqrt(Math.max(0, p)) / Math.max(1, b - a);
 }
-// transient onsets: 5ms-block mean |first difference|, fixed threshold,
-// 150ms refractory. Plucks attack hard; pedal/ticks stay under the threshold.
-function countOnsets(x, a, b, thresh) {
-  const i0 = Math.max(1, Math.floor(a * SR)), i1 = Math.min(x.length, Math.floor(b * SR));
-  const blk = Math.floor(SR * 0.005);
-  let cnt = 0, lastOn = -1e9;
+// transient onsets: 10ms block RMS vs trailing-median baseline. A pluck
+// attack jumps well above the steady pedal floor; ticks/room tone do not.
+function countOnsets(x, a, b) {
+  const blk = Math.floor(SR * 0.010);
+  const ctx = 30;                                  // 0.3s trailing baseline
+  const i0 = Math.max(0, Math.floor((a - 0.35) * SR)), i1 = Math.min(x.length, Math.floor(b * SR));
+  const e = [];
   for (let i = i0; i + blk <= i1; i += blk) {
     let s = 0;
-    for (let j = i; j < i + blk; j++) s += Math.abs(x[j] - x[j - 1]);
-    const v = s / blk;
-    const tSec = i / SR;
-    if (v > thresh && tSec - lastOn > 0.15) { cnt++; lastOn = tSec; }
+    for (let j = i; j < i + blk; j++) s += x[j] * x[j];
+    e.push(Math.sqrt(s / blk));
+  }
+  let cnt = 0, lastOn = -1e9;
+  for (let k = 1; k < e.length; k++) {
+    const tSec = (i0 + k * blk) / SR;
+    if (tSec < a) continue;                        // context only before the window
+    const base = e.slice(Math.max(0, k - ctx), k).sort((p, q) => p - q);
+    const med = base[Math.floor(base.length / 2)] || 0;
+    if (e[k] > med * 1.6 && e[k] - med > 0.012 && tSec - lastOn > 0.18) {
+      cnt++; lastOn = tSec;
+    }
   }
   return cnt;
 }
@@ -148,7 +157,7 @@ async function main() {
   let onsets = 0;
   const perWin = [];
   for (const [a, b] of film.pluckWindows) {
-    const c = countOnsets(x, B(a), B(b), 0.012);
+    const c = countOnsets(x, B(a), B(b));
     perWin.push(c); onsets += c;
   }
   const lo = Math.ceil(film.pluckCount * 0.8), hi = Math.floor(film.pluckCount * 1.2);
@@ -186,6 +195,7 @@ async function main() {
   say('VERDICT: ' + (checks.every(c => c) ? 'PASS' : 'FAIL'));
 }
 
+let done = false;
 main().catch(err => {
   say('HARNESS ERROR: ' + (err.stack || err));
   say('VERDICT: FAIL');
@@ -194,7 +204,17 @@ main().catch(err => {
   pre.textContent = lines.join('\n');
   document.body.appendChild(pre);
   document.title = 'DONE';
+  done = true;
 });
+
+// Pacer for headless --virtual-time-budget runs: offline rendering happens on
+// a real thread that virtual time does not wait for, so burn real CPU per
+// virtual tick to keep the page alive until the render promise resolves.
+(function pace() {
+  if (done) return;
+  for (let i = 0, s = 0; i < 2e7; i++) s += i;   // ~real milliseconds of work
+  setTimeout(pace, 50);
+})();
 </script>
 </body>
 </html>
