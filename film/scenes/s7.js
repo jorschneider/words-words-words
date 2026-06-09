@@ -120,9 +120,9 @@ export function build(film, T, ctx) {
   // the red rule — attribution, at last, in writing.
   film.add(ink.stroke({
     id: 's7-c24-accuse', t0: c24.start + 5.7, dur: 2.4, w: 0.7, taper: 0.1,
-    pts: [{ x: 641, y: 1261 }, { x: 612, y: 1265 }, { x: 540, y: 1261 },
-          { x: 470, y: 1251 }, { x: 320, y: 1239 }, { x: 240, y: 1234 },
-          { x: ANCHORS.redRuleX, y: 1240 }],
+    pts: [{ x: 641, y: 1262 }, { x: 655, y: 1252 }, { x: 652, y: 1240 },
+          { x: 625, y: 1231 }, { x: 520, y: 1227 }, { x: 360, y: 1227 },
+          { x: 240, y: 1231 }, { x: 176, y: 1236 }, { x: ANCHORS.redRuleX, y: 1240 }],
   }));
 
   // ================================================== (5) c25 + THE SACRED LINE

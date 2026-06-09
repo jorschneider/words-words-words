@@ -87,7 +87,7 @@ export function build(film, T, ctx) {
 
   // THE GOLD PERIOD — the page's ONLY gold.
   film.add(ink.goldStamp({ id: 's8-gold-period', t0: goldT, dur: 0.9,
-    x: GP.x, y: GP.y, size: 18, text: '.' }));
+    x: GP.x, y: GP.y, size: 24, text: '.' }));
   film.ev({ t: c29.end + 0.2, type: 'bell' });
   film.ev({ t: c29.end + 0.3, type: 'heartbeat' });            // HB6, the last
   film.ev({ t: c29.end + 0.6, type: 'mute', data: { dur: 3.2 } });
