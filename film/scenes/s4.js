@@ -65,7 +65,7 @@ export function build(film, T, ctx) {
       if (ts < dripT0) return;
       const u = ((ts - dripT0) % 0.75) / 0.75;
       g.save();
-      g.fillStyle = INK.rubric;
+      g.fillStyle = INK.iron;
       g.globalAlpha = 0.85 * (1 - Math.max(0, u - 0.75) * 4);
       g.beginPath();
       g.arc(541.3, 698.4 + u * 5.2, 0.9, 0, 7);
@@ -74,13 +74,9 @@ export function build(film, T, ctx) {
     },
   });
 
-  // c10 — Gertrude, from inside the test's own audience. Her line sits beneath
-  // the miniature on a banderole baseline; the ribbon curls from the lower border.
+  // c10 — Gertrude, from inside the test's own audience. Her line sits plainly
+  // beneath the miniature.
   line('s4-c10', c10.start, c10.dur, 310, 764, 'The lady doth protest too much, methinks.');
-  film.add(ink.stroke({
-    id: 's4-banderole', t0: c10.start - 0.15, dur: 0.6, w: 2, taper: 0.3,
-    pts: [{ x: 612, y: 750 }, { x: 625, y: 759 }, { x: 616, y: 768 }, { x: 602, y: 771 }],
-  }));
 
   // c11 — "Give me some light: away!" — the inset FLOODS
   film.add({
@@ -152,13 +148,14 @@ export function build(film, T, ctx) {
   }));
 
   // the blade extends from the text toward the nape — faint, 60% of the way,
-  // frozen — ink cannot retract; the action is pruned with a strike instead
+  // frozen — ink cannot retract; the action is pruned with a strike immediately
   film.add(ink.stroke({
     id: 's4-blade', t0: c13.start + 3.3, dur: 1.5, w: 2.2, alpha: 0.25, taper: 0.3,
     pts: [{ x: 525, y: 845 }, { x: 605, y: 836 }, { x: 684, y: 826 }],
   }));
-  film.add(ink.strike({ id: 's4-blade-strike', t0: 116.9, dur: 0.45, x: 545, y: 839, w: 150, weight: 2.4 }));
-  film.ev({ t: 116.9, type: 'strike' });
+  const pruneT = c13.start + 4.95;
+  film.add(ink.strike({ id: 's4-blade-strike', t0: pruneT, dur: 0.45, x: 545, y: 839, w: 150, weight: 2.4 }));
+  film.ev({ t: pruneT, type: 'strike' });
 
   // c14 — the couplet on the baseline...
   const l14a = "My words fly up, my thoughts remain below:";
@@ -167,13 +164,14 @@ export function build(film, T, ctx) {
   line('s4-c14a', c14.start, d14a, colX(PR), lineY(PR, 3), l14a);
   line('s4-c14b', c14.start + d14a, 2.61, colX(PR), lineY(PR, 4), l14b);
 
-  // ...hollow word-copies rise 22 units as the spoken words pass
+  // ...hollow word-copies rise into the inter-line gap as the spoken words pass
+  // (12 units up — 22 would tangle them in line 2's descenders at lh 26)
   [['My ', 'words'], ['My words ', 'fly'], ['My words fly ', 'up']].forEach(([pre, word], i) => {
     const at = c14.start + ((pre + word).length / l14a.length) * d14a;
     film.add(ink.writeText({
       id: 's4-rise-' + word, t0: at, dur: 0.7,
       x: colX(PR) + ink.textW(pre, BODY.size, 'italic'),
-      y: lineY(PR, 3) - 22,
+      y: lineY(PR, 3) - 12,
       size: BODY.size, style: 'italic', text: word, outline: true, alpha: 0.5,
     }));
   });
@@ -207,9 +205,9 @@ export function build(film, T, ctx) {
     }));
   }
 
-  // c15 — Polonius, cut off mid-word: the written line outlives the voice but
-  // never finishes the word
-  line('s4-c15', c15.start, 1.9, 560, 975, 'O, I am sl', { size: 12 });
+  // c15 — Polonius, cut off mid-word: ink and voice die together, the word
+  // never finished
+  line('s4-c15', c15.start, c15.dur, 560, 975, 'O, I am sl', { size: 12 });
 
   // THE PIERCE — at the cut, exactly: one violent stroke corner to corner
   film.add(ink.stroke({
@@ -230,14 +228,13 @@ export function build(film, T, ctx) {
     CAM(T.start, 520, 560, 520),               // opening, from s3
     CAM(88.0, 510, 665, 420),                  // settle on the miniature
     CAM(96.6, 510, 665, 420),                  // hold through c10–c11
-    CAM(98.1, 430, 685, 620, 'out'),           // "away!" — punch out fast
-    CAM(101.0, 380, 680, 620),                 // drift left: manicule enters frame
+    CAM(97.6, 520, 690, 560, 'out'),           // "away!" — punch out fast
+    CAM(101.3, 380, 680, 620),                 // drift left: manicule enters frame
     CAM(105.2, 380, 680, 620),                 // hold the verification tableau
-    CAM(109.4, 503, 880, 620),                 // track down to the prayer band
-    CAM(126.8, 503, 880, 620),                 // hold the double register
-    CAM(130.7, 380, 985, 600),                 // descend to the closet, arras right
-    CAM(139.0, 380, 985, 600),                 // hold: pierce, heartbeat, seal, c16
-    CAM(141.4, 480, 990, 500),                 // drift toward the curtain...
-    CAM(T.end, 560, 990, 400),                 // ...where the wrong name lies — s5
+    CAM(109.4, 503, 850, 620),                 // track down to the prayer band
+    CAM(128.3, 503, 850, 620),                 // hold the completed double register
+    CAM(131.0, 466, 985, 560),                 // descend to the closet, arras right
+    CAM(139.3, 466, 985, 560),                 // hold: pierce, heartbeat, seal, c16
+    CAM(T.end, 560, 990, 400),                 // smallest move: toward the curtain — s5
   ]);
 }

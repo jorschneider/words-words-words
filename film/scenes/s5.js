@@ -29,9 +29,9 @@ export function build(film, T, ctx) {
 
   // ------------------------------------------------------------ camera
   film.cam([
-    CAM(T.start, 450, 1075, 300),                 // settle on the blank band
-    CAM(T.start + 3.7, 345, 1072, 300),           // drift to where her line will begin
-    CAM(c17.start, 345, 1072, 300),               // hold through the tacet
+    CAM(T.start, 560, 990, 400),                  // handoff: exactly where s4 left us, by the arras
+    CAM(c17.start - 2, 335, 1072, 300),           // one slow descent to the blank band — her line's origin
+    CAM(c17.start, 335, 1072, 300),               // dead still through the tacet
     CAM(c17.end + 0.5, 504, 1077, 300),           // pan with the nib as she writes
     CAM(c17.end + 3.7, 655, 1083, 470),           // widen: gloss + grotesques frame right
     CAM(c18.end - 0.6, 668, 1088, 485),           // slow creep across the report

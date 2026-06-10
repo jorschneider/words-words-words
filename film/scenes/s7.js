@@ -63,33 +63,33 @@ export function build(film, T, ctx) {
   pluck(c23.start + 4.4);
 
   // The tipped cup: three thin rubric strokes forming a chalice fallen on its
-  // side above her line's head, mouth toward the margin.
+  // side at the head of her line, mouth toward the margin.
   const cupT = c23.start + 0.4;
   film.add(ink.stroke({
     id: 's7-cup-bowl', t0: cupT, dur: 0.35, w: 1.1, color: INK.rubric, taper: 0.2,
-    pts: [{ x: 235, y: 1241 }, { x: 242, y: 1240 }, { x: 247, y: 1245 },
-          { x: 246.5, y: 1251 }, { x: 240, y: 1254.5 }],
+    pts: [{ x: 233, y: 1249 }, { x: 238.5, y: 1248 }, { x: 242, y: 1251.5 },
+          { x: 241.5, y: 1256 }, { x: 235.5, y: 1258.5 }],
   }));
   film.add(ink.stroke({
     id: 's7-cup-stem', t0: cupT + 0.3, dur: 0.25, w: 1.1, color: INK.rubric, taper: 0.2,
-    pts: [{ x: 247, y: 1248 }, { x: 253, y: 1245 }],
+    pts: [{ x: 242, y: 1253.5 }, { x: 246, y: 1251 }],
   }));
   film.add(ink.stroke({
     id: 's7-cup-foot', t0: cupT + 0.55, dur: 0.25, w: 1.1, color: INK.rubric, taper: 0.2,
-    pts: [{ x: 251, y: 1240.5 }, { x: 255, y: 1248 }],
+    pts: [{ x: 245, y: 1248 }, { x: 247.5, y: 1253.5 }],
   }));
 
   // The ink bead at the cup's mouth, and the hairline running LEFT to the
   // ledger — reaching seal 3 exactly as it sets.
   film.add(ink.blot({
-    id: 's7-c23-bead', t0: c23.start + 1.8, dur: 0.9, x: 231, y: 1252, r: 1.6, tendrils: 0,
+    id: 's7-c23-bead', t0: c23.start + 1.8, dur: 0.9, x: 230, y: 1254, r: 2.5, tendrils: 0,
   }));
   const hb3 = c23.end + 0.5;
   const runT0 = c23.start + 2.2;
   film.add(ink.stroke({
     id: 's7-c23-run', t0: runT0, dur: hb3 - runT0, w: 0.7, taper: 0.08,
-    pts: [{ x: 231, y: 1253 }, { x: 202, y: 1259 }, { x: 168, y: 1263 },
-          { x: 128, y: 1267 }, { x: 96, y: 1270 }],
+    pts: [{ x: 229, y: 1255 }, { x: 195, y: 1259 }, { x: 160, y: 1263 },
+          { x: 125, y: 1267 }, { x: ANCHORS.seal3.x, y: ANCHORS.seal3.y }],
   }));
 
   // HEARTBEAT 3 — Gertrude. Seal 3 stamps; her figure sinks in the right gutter.
@@ -117,9 +117,10 @@ export function build(film, T, ctx) {
   pluck(c24bT);
 
   // THE ACCUSATION HAIRLINE: from his words' end, left and up, splicing into
-  // the red rule — attribution, at last, in writing.
+  // the red rule — attribution, at last, in writing. It completes the splice
+  // just as the camera lands on the red rule (the move tracks the stroke).
   film.add(ink.stroke({
-    id: 's7-c24-accuse', t0: c24.start + 5.7, dur: 2.4, w: 0.7, taper: 0.1,
+    id: 's7-c24-accuse', t0: c24.start + 5.7, dur: 3.6, w: 0.7, taper: 0.1,
     pts: [{ x: 641, y: 1262 }, { x: 655, y: 1252 }, { x: 652, y: 1240 },
           { x: 625, y: 1231 }, { x: 520, y: 1227 }, { x: 360, y: 1227 },
           { x: 240, y: 1231 }, { x: 176, y: 1236 }, { x: ANCHORS.redRuleX, y: 1240 }],
@@ -177,17 +178,17 @@ export function build(film, T, ctx) {
   // ================================================== CAMERA
   film.cam([
     CAM(S, 520, 1230, 300),                      // opening — handed off from s6
-    CAM(S + 2.3, 465, 1260, 560),                // widen: the whole arena, both hands
-    CAM(S + 3.5, 465, 1260, 560),                // hold through the rapier X
+    CAM(S + 1.2, 465, 1248, 590),                // widen fast: the whole arena, both hands
+    CAM(S + 3.5, 465, 1248, 590),                // hold through the rapier X
     CAM(c23.start + 0.6, 340, 1265, 290, 'out'), // punch-in: the tipped cup
     CAM(c23.start + 5.8, 450, 1286, 330),        // drift down-right with her diagonal
     CAM(c23.end + 1.45, 470, 1282, 340),         // hold through heartbeat 3
     CAM(c24.start + 1.6, 595, 1266, 310),        // over to Laertes's confession
     CAM(c24.start + 5.2, 600, 1264, 300),        // hold as the accusation begins
     CAM(c24.start + 5.9, 612, 1258, 270, 'out'), // punch-in: the hairline launches
-    CAM(c25.start + 0.2, 343, 1246, 380),        // follow it left to the red-rule splice
-    CAM(c25.end - 0.05, 545, 1290, 360),         // drift down-right along c25's line
-    CAM(c25.end + 0.75, 620, 1297, 300, 'out'),  // punch-in: the sacred line writes
+    CAM(c25.start + 0.2, 330, 1246, 380),        // follow it left to the red-rule splice
+    CAM(c25.end - 0.05, 575, 1293, 360),         // drift down-right along c25's line
+    CAM(c25.end + 0.75, 635, 1297, 300, 'out'),  // punch-in: the sacred line writes
     CAM(c26.end - 1.0, 540, 1300, 300),          // pull to the merged baseline
     CAM(T.end, 540, 1300, 300),                  // hold — s8 dives to the period from here
   ]);

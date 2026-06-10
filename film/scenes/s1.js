@@ -62,7 +62,7 @@ export function build(film, T, ctx) {
   }));
 
   film.add(ink.writeText({
-    id: 's1-title-3', t0: 5.6, dur: 1.4,
+    id: 's1-title-3', t0: 5.6, dur: 2.3,
     x: TX, y: 110, size: 17, style: 'sc', align: 'center',
     text: 'Prince of Denmarke', jitter: 0.8,
   }));
@@ -100,18 +100,18 @@ export function build(film, T, ctx) {
   // between the letterforms of the unfinished line...
   film.add(ink.writeText({
     id: 's1-ghost-h', t0: tWatch, dur: 0.7,
-    x: 600, y: 255, size: 22, outline: true, color: INK.ghost, text: 'h',
+    x: 610, y: 255, size: 22, outline: true, color: INK.ghost, text: 'h',
   }));
   // ...then an ephemeral copy slides downward 40 units and fades to nothing.
   const gf = ink.fontStr(22, 'italic');
   const gd0 = tWatch + 0.45;
   film.add({
     id: 's1-ghost-drift', t0: gd0, dur: 3, static: false, ephemeral: true,
-    bbox: [584, 232, 40, 96],
+    bbox: [594, 232, 40, 96],
     draw(g, p, t) {
       const u = clamp01(p);
       const dy = smooth(u) * 40;
-      const sway = Math.sin(u * 5.2 + 0.7) * 2.5 * (1 - u);
+      const sway = Math.sin(u * 5.2) * 2.5 * (1 - u);
       const a = 0.8 * (1 - smooth(u));
       if (a <= 0.01) return;
       g.save();
@@ -120,22 +120,23 @@ export function build(film, T, ctx) {
       g.strokeStyle = INK.ghost;
       g.lineWidth = Math.max(0.5, 22 * 0.035);
       g.globalAlpha = a;
-      g.strokeText('h', 600 + sway, 255 + dy);
+      g.strokeText('h', 610 + sway, 255 + dy);
       g.restore();
     },
   });
 
   // ------------------------------------------------------------ camera
-  // Open on the title; hold while it writes; drop down-left to the head of the
-  // first ruled line of band_ghost as Horatio speaks. During the cue the camera
-  // tracks slowly right with the nib (the line is wider than any one frame —
-  // the nib must enter at the left and the halt on 'speak' must be seen), then
-  // recoils to the scripted (470,265,300) as the watch materializes; holds for s2.
+  // Open on the title; hold while it writes; one slow drop to the battlements,
+  // landing on the head of band_ghost line 0 just as the nib touches (8.85).
+  // Attention then drifts right with the writing and settles at (470,265,300)
+  // before the halt: the last words and the mid-line stop hang just off the
+  // right edge of the frame — a demand for output at the edge of attention —
+  // and the ghost letterform slides in at that same edge. Dead still to T.end;
+  // s2 opens panning right from this exact shot.
   film.cam(CAM(T.start, 500, 74, 420));
-  film.cam(CAM(4.8, 500, 74, 420));
-  film.cam(CAM(c01.start, 344, 265, 310, 'smooth'));
-  film.cam(CAM(c01.end, 528, 265, 390, 'linear'));
-  film.cam(CAM(tWatch, 490, 265, 330, 'smooth'));
-  film.cam(CAM(T.end, 470, 265, 300, 'smooth'));
+  film.cam(CAM(5.2, 500, 74, 420));
+  film.cam(CAM(c01.start + 0.45, 352, 248, 330, 'smooth')); // the drop
+  film.cam(CAM(c01.start + 4.65, 470, 265, 300, 'smooth')); // drift with the nib, settle
+  film.cam(CAM(T.end, 470, 265, 300));
 
 }

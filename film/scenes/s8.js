@@ -42,9 +42,9 @@ export function build(film, T, ctx) {
   // The witness coming down the ledger: two small instances of the same figure,
   // a faint trace of passage mid-ledger, then arrived at the foot, facing the line.
   // (Second instance sits at x 116 rather than 90 to clear seal5 at (90,1318).)
-  film.add(ink.figure({ id: 's8-witness-a', t0: c27.start + 0.4, dur: 1.4,
+  film.add(ink.figure({ id: 's8-witness-a', t0: c27.start, dur: 1.4,
     x: 90, y: 1150, h: 34, pose: POSES['horatio-stand'], alpha: 0.4 }));
-  film.add(ink.figure({ id: 's8-witness-b', t0: c28.start + 0.5, dur: 1.6,
+  film.add(ink.figure({ id: 's8-witness-b', t0: c28.start, dur: 1.6,
     x: 116, y: 1342, h: 34, pose: POSES['horatio-stand'], alpha: 0.9 }));
 
   // ---------------------------------------------------------------- (2) THE HELD PERIOD
@@ -52,7 +52,7 @@ export function build(film, T, ctx) {
   // The page is steady; the MARK is afraid.
   const tremT0 = c28.end + 0.5;
   const goldT = c29.end + 0.2;
-  const tremDur = (goldT + 0.15) - tremT0;  // lives until the gold stamps over it
+  const tremDur = c29.end - tremT0;         // un-set until the whisper ends
   film.add({
     id: 's8-held-period', t0: tremT0, dur: tremDur, static: false,
     bbox: [GP.x - 9, GP.y - 12, 18, 18],
@@ -78,16 +78,16 @@ export function build(film, T, ctx) {
     data: { dur: (c29.start - c28.end) + c29.dur - 0.3 } });
 
   // ---------------------------------------------------------------- (3) THE SETTING
-  // The whisper writes faint, a half-line tucked under the line's end, just
-  // left-below the period (the line itself is full to x≈688 — see report).
-  // No written full stop: the page's only period is the gold one.
+  // The whisper writes faint from x 560, tucked just under the dying line's
+  // tail (the line itself is full to x≈688 at y 1330), ending left of the
+  // period. No written full stop: the page's only period is the gold one.
   film.add(ink.writeText({ id: 's8-c29', t0: c29.start, dur: c29.dur,
-    x: GP.x - 13, y: GP.y + 17, size: 13, style: 'italic',
-    text: 'The rest is silence', align: 'right', alpha: 0.55 }));
+    x: 560, y: GP.y + 15, size: 13, style: 'italic',
+    text: 'The rest is silence', alpha: 0.55 }));
 
   // THE GOLD PERIOD — the page's ONLY gold.
   film.add(ink.goldStamp({ id: 's8-gold-period', t0: goldT, dur: 0.9,
-    x: GP.x, y: GP.y, size: 24, text: '.' }));
+    x: GP.x, y: GP.y, size: 15, text: '.' }));
   film.ev({ t: c29.end + 0.2, type: 'bell' });
   film.ev({ t: c29.end + 0.3, type: 'heartbeat' });            // HB6, the last
   film.ev({ t: c29.end + 0.6, type: 'mute', data: { dur: 3.2 } });
@@ -163,7 +163,7 @@ export function build(film, T, ctx) {
   frieze.forEach((f, i) => {
     if (f.corpse) {
       film.add(ink.figure({ id: 's8-frieze-' + i, t0: f.t, dur: 0.9,
-        x: f.x, y: 1384, h: 24, pose: POSES['player-sleep'], alpha: 0.8 }));
+        x: f.x, y: 1384, h: 20, pose: POSES['player-sleep'], alpha: 0.8 }));
     } else {
       film.add(ink.figure({ id: 's8-frieze-' + i, t0: f.t, dur: 0.9,
         x: f.x, y: 1392, h: 22, pose: POSES['fortinbras-stand'], alpha: 0.8 }));
@@ -190,16 +190,14 @@ export function build(film, T, ctx) {
   film.cam([
     CAM(T.start, 540, 1300, 300),                          // opening: the duel's wake
     CAM(c27.start, 480, 1318, 300, 'smooth'),              // the last live line
-    CAM(c27.end, 480, 1318, 300),                          // hold through c27
-    CAM(c28.start + 3.2, 270, 1326, 330, 'smooth'),        // left: the witness at the foot
-    CAM(c28.start + 4.4, 270, 1326, 330),                  // a beat on her
-    CAM(c28.end + 1.5, 688, 1344, 140, 'smooth'),          // THE DIVE across the dying line
-    CAM(c29.end + 1.0, 688, 1344, 140),                    // dead still through the silence
-    CAM(c29.end + 2.0, 672, 1354, 170, 'smooth'),          // tiny widen: the gold's glint
-    CAM(c30.start + 1.6, 480, 1360, 300, 'smooth'),        // down-left to the colophon
-    CAM(c30.start + 3.2, 480, 1360, 300),                  // hold on the witness's hand
-    CAM(281.7, 705, 1332, 200, 'smooth'),                  // return to the gold
-    CAM(284.8, 640, 1300, 560, 'smooth'),                  // low and widening: stamps + frieze land in frame
-    CAM(294.7, 500, 707, 2560, 'smooth'),                  // THE PULL-BACK: the whole leaf
+    CAM(c28.start + 3.0, 480, 1318, 300),                  // hold: c27 and c28's first breath
+    CAM(c28.end + 1.5, 705, 1332, 140, 'smooth'),          // THE DIVE — tightest frame of the film
+    CAM(c29.end + 0.2, 705, 1332, 140),                    // dead still: held period, whisper, bell
+    CAM(c29.end + 1.0, 690, 1330, 170, 'smooth'),          // tiny widen: the gold's glint
+    CAM(c30.start - 2.5, 690, 1330, 170),                  // hold on the point of fire
+    CAM(c30.start + 1.6, 480, 1360, 300, 'smooth'),        // pan down-left to the colophon
+    CAM(c30.start + 3.0, 480, 1360, 300),                  // hold on the witness's hand
+    CAM(281.7, 705, 1332, 200, 'smooth'),                  // return to the gold — pull-back start
+    CAM(294.7, 500, 707, 2560, 'smooth'),                  // THE PULL-BACK: the whole leaf, once
   ]);
 }

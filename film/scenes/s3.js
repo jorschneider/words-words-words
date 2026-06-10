@@ -66,13 +66,13 @@ export function build(film, T, ctx) {
   const ib = REGIONS.inset_mousetrap;
   const rectPts = (x, y, w, h) => [{ x, y }, { x: x + w, y }, { x: x + w, y: y + h }, { x, y: y + h }, { x, y }];
   const bt0 = c07.start + c07.dur * 0.62;
-  film.add(ink.stroke({ id: 's3-inset-outer', t0: bt0, dur: 1.15, pts: rectPts(ib.x, ib.y, ib.w, ib.h), w: 1.2, taper: 0.05 }));
-  film.add(ink.stroke({ id: 's3-inset-inner', t0: bt0 + 0.7, dur: 0.95, pts: rectPts(ib.x + 4, ib.y + 4, ib.w - 8, ib.h - 8), w: 0.8, taper: 0.05 }));
+  film.add(ink.stroke({ id: 's3-inset-outer', t0: bt0, dur: 0.95, pts: rectPts(ib.x, ib.y, ib.w, ib.h), w: 1.2, taper: 0.05 }));
+  film.add(ink.stroke({ id: 's3-inset-inner', t0: bt0 + 0.55, dur: 0.85, pts: rectPts(ib.x + 4, ib.y + 4, ib.w - 8, ib.h - 8), w: 0.8, taper: 0.05 }));
   const corners = [[ib.x + 2, ib.y + 2], [ib.x + ib.w - 2, ib.y + 2], [ib.x + ib.w - 2, ib.y + ib.h - 2], [ib.x + 2, ib.y + ib.h - 2]];
   corners.forEach(([cx, cy], ci) => {
     [[5, 0], [0, 5], [-5, 0], [0, -5]].forEach(([dx, dy], pi) => {
       film.add(ink.stroke({
-        id: `s3-rosette-${ci}-${pi}`, t0: bt0 + 1.65 + ci * 0.14 + pi * 0.045, dur: 0.28,
+        id: `s3-rosette-${ci}-${pi}`, t0: bt0 + 1.35 + ci * 0.12 + pi * 0.04, dur: 0.2,
         pts: [{ x: cx, y: cy }, { x: cx + dx * 0.6 + dy * 0.12, y: cy + dy * 0.6 + dx * 0.12 }, { x: cx + dx, y: cy + dy }],
         w: 1.1, taper: 0.6,
       }));
@@ -91,7 +91,7 @@ export function build(film, T, ctx) {
   const tq = c08.start + c08.dur * (qText.indexOf('question') / qText.length);
 
   // three branches sharing one curvature family, fanning right and down
-  const b1 = ink.branch({ id: 's3-br1', t0: tq, dur: 2.0, x: 340, y: 425, angle: 0.4, len: 125, curl: 0.5, segs: 3, w: 2.2, childSpread: 0.52 });
+  const b1 = ink.branch({ id: 's3-br1', t0: tq, dur: 2.0, x: 340, y: 425, angle: 0.35, len: 130, curl: 0.5, segs: 3, w: 2.2, childSpread: 0.52 });
   const b2 = ink.branch({ id: 's3-br2', t0: tq + 0.88, dur: 2.55, x: 480, y: 445, angle: 0.18, len: 150, curl: 0.45, segs: 3, w: 2.0, childSpread: 0.5 });
   const b3 = ink.branch({ id: 's3-br3', t0: tq + 1.75, dur: 2.3, x: 390, y: 470, angle: 0.52, len: 120, curl: 0.55, segs: 3, w: 2.0, childSpread: 0.55 });
   const e1 = tq + 2.0, e2 = tq + 0.88 + 2.55, e3 = tq + 1.75 + 2.3;
@@ -177,8 +177,8 @@ export function build(film, T, ctx) {
   film.add(ink.stroke({
     id: 's3-survivor', t0: c09.end + 0.2, dur: 1.5,
     pts: [{ x: footTip.x, y: footTip.y },
-          { x: footTip.x + (470 - footTip.x) * 0.5, y: footTip.y + (598 - footTip.y) * 0.45 },
-          { x: 474, y: 586 },
+          { x: footTip.x + (470 - footTip.x) * 0.4, y: footTip.y + (598 - footTip.y) * 0.3 },
+          { x: footTip.x + (470 - footTip.x) * 0.78, y: footTip.y + (598 - footTip.y) * 0.68 },
           { x: 470, y: 598 }],
     w: 1.05, taper: 0.35,
   }));
@@ -195,8 +195,8 @@ export function build(film, T, ctx) {
     CAM(c07.start + 2.2, 420, 390, 470, 'linear'), // pointedly back to the column
     CAM(c08.start, 425, 415, 500),
     CAM(tq, 430, 424, 495),
-    CAM(tq + 4.35, 685, 448, 620, 'linear'),       // tracking the edge-racer
-    CAM(tq + 6.1, 685, 448, 620),                  // hold: ink stops mid-word
+    CAM(tq + 4.45, 690, 448, 620, 'linear'),       // tracking the edge-racer
+    CAM(tq + 6.1, 690, 448, 620),                  // hold: ink stops mid-word
     CAM(c09.start + 3.5, 520, 440, 560),           // the whole dead fan
     CAM(c09.end - 0.95, 520, 440, 560),
     CAM(T.end, 520, 560, 520),                     // gliding toward the inset
