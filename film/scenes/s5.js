@@ -37,8 +37,8 @@ export function build(film, T, ctx) {
     CAM(c18.end - 0.6, 668, 1088, 485),           // slow creep across the report
     CAM(c19.start + 0.8, 452, 1094, 520),         // back to her band for the last line
     CAM(c19.start + 2.8, 452, 1094, 520),         // hold as the granulation begins
-    CAM(T.end - 0.8, 600, 1180, 520),             // drift down-right after the letters
-    CAM(T.end, 560, 1180, 520),                   // closing position
+    CAM(T.end - 0.8, 540, 1186, 460),             // drift down-right after the letters, tightening
+    CAM(T.end, 500, 1190, 420),                   // closing position — matches s6's opening keyframe
   ]);
 
   // ------------------------------------------------------------ (1) pre-tacet

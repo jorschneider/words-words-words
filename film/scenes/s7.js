@@ -52,7 +52,7 @@ export function build(film, T, ctx) {
   }));
   pluck(c23.start);
   film.add(ink.writeText({
-    id: 's7-c23b', t0: c23.start + 2.5, dur: 1.7, x: 322, y: 1280,
+    id: 's7-c23b', t0: c23.start + 2.5, dur: 1.7, x: 322, y: 1287,
     size: 14, style: 'italic', jitter: 1.3, text: 'O my dear Hamlet...',
   }));
   pluck(c23.start + 2.5);
@@ -131,7 +131,7 @@ export function build(film, T, ctx) {
 
   // Hamlet, post-swap: roman now (the exchanged rapier), venom-thin.
   film.add(ink.writeText({
-    id: 's7-c25', t0: c25.start, dur: c25.dur, x: 200, y: 1300,
+    id: 's7-c25', t0: c25.start, dur: c25.dur, x: 200, y: 1305,
     size: 15, style: 'roman', jitter: 1.2, alpha: 0.7,
     text: "The point envenom'd too! Then, venom, to thy work.",
   }));

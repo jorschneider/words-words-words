@@ -114,13 +114,13 @@ export function build(film, T, ctx) {
   // the pen circles 'globe' the instant it lands — the page annotating itself
   const preW = ink.textW('In this distracted ', BODY.size, 'italic');
   const gw = ink.textW('globe', BODY.size, 'italic');
-  const gcx = h2x + preW + gw / 2, gcy = lineY(BG, 5) - 5.5;
+  const gcx = h2x + preW + gw / 2 + 8, gcy = lineY(BG, 5) - 5.5;
   const tGlobe = c05.start + e1 + e2 * (h2.indexOf('globe.') + 5) / h2.length;
   const ellPts = [];
-  for (let i = 0; i <= 14; i++) {
-    const a = -2.3 + (i / 14) * Math.PI * 2 * 1.05;
+  for (let i = 0; i <= 28; i++) {
+    const a = -2.3 + (i / 28) * Math.PI * 2 * 1.05;
     ellPts.push({
-      x: gcx + Math.cos(a) * (34 + (rnd('s2-globe-e', i) - 0.5) * 2.6),
+      x: gcx + Math.cos(a) * (25 + (rnd('s2-globe-e', i) - 0.5) * 2.6),
       y: gcy + Math.sin(a) * (14 + (rnd('s2-globe-e', i + 40) - 0.5) * 2),
     });
   }
@@ -134,11 +134,11 @@ export function build(film, T, ctx) {
   film.cam(CAM(T.start, 470, 265, 300));
   film.cam(CAM(19.8, 470, 265, 300));
   film.cam(CAM(23.0, 650, 262, 320));
-  film.cam(CAM(26.45, 650, 262, 320));
-  film.cam(CAM(29.9, 460, 162, 560));   // tilt up: the command begins
-  film.cam(CAM(31.75, 545, 160, 560));  // drift with the nib; the period sets at the anchor
-  film.cam(CAM(34.85, 655, 295, 380));  // back down to the gutter for the adieus
-  film.cam(CAM(37.5, 655, 295, 380));
+  film.cam(CAM(26.0, 650, 262, 320));
+  film.cam(CAM(29.9, 504, 175, 620));   // tilt up: the whole command in frame
+  film.cam(CAM(31.75, 504, 175, 620));  // hold; the period sets at the anchor, line entire
+  film.cam(CAM(35.3, 655, 295, 380));   // back down to the gutter for the adieus
+  film.cam(CAM(37.0, 655, 295, 380));
   film.cam(CAM(40.8, 445, 320, 460));   // left to Hamlet's reply
   film.cam(CAM(47.2, 445, 320, 460));
   film.cam(CAM(T.end - 0.02, 500, 330, 380));

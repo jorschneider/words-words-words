@@ -51,7 +51,11 @@ export function build(film, T, ctx) {
   // From here to T.end: nothing writes. The film breathes.
 
   // ---- camera: the film's calmest move. One slow drift in, then on toward the duel.
+  // Biased left as c20 begins (the line starts at page x~237) so its opening words
+  // write on-screen, then a gentle glide right so '...sparrow.' lands in frame too.
   film.cam(CAM(T.start, 500, 1190, 420));
+  film.cam(CAM(c20.start, 434, 1191, 410));    // left edge ~229: 'Not a whit,' writes in frame
+  film.cam(CAM(c20.end, 495, 1194, 386));      // drift with the nib; line's end stays visible
   film.cam(CAM(c22.end, 480, 1200, 330));      // arrives as 'Let be.' lands
   film.cam(CAM(T.end, 520, 1230, 300));        // aimed at where the duel will begin
 }

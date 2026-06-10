@@ -78,11 +78,13 @@ export function build(film, T, ctx) {
     data: { dur: (c29.start - c28.end) + c29.dur - 0.3 } });
 
   // ---------------------------------------------------------------- (3) THE SETTING
-  // The whisper writes faint from x 560, tucked just under the dying line's
-  // tail (the line itself is full to x≈688 at y 1330), ending left of the
-  // period. No written full stop: the page's only period is the gold one.
+  // The whisper writes faint from x 600, tucked just under the dying line's
+  // tail (the line itself is full to x≈688 at y 1330), ending ~24u left of
+  // the period — so 'silence' (x≈650-681) creeps into the lower-left of the
+  // dive frame (left edge x 635) while it is spoken. No written full stop:
+  // the page's only period is the gold one.
   film.add(ink.writeText({ id: 's8-c29', t0: c29.start, dur: c29.dur,
-    x: 560, y: GP.y + 15, size: 13, style: 'italic',
+    x: 600, y: GP.y + 15, size: 13, style: 'italic',
     text: 'The rest is silence', alpha: 0.55 }));
 
   // THE GOLD PERIOD — the page's ONLY gold.
@@ -106,20 +108,23 @@ export function build(film, T, ctx) {
   film.ev({ t: c30.start, type: 'pluck', data: { n: 30 } });
 
   // WING CADELS: two hairline upstrokes rising at 'flights of angels'.
+  // The 'angels' cadel is shortened (rise 14, tip y≈1350) so its tip stays
+  // below the whisper's baseline (y 1347) instead of grazing its glyphs.
   const n30 = TXT30.length;
-  const cadel = (idxTip, dx0, key) => {
+  const cadel = (idxTip, dx0, key, rise = 18) => {
     const xb = colX(colo) + ink.textW(TXT30.slice(0, idxTip), sz30, 'roman') + dx0;
     const yb = y30 - sz30 * 0.62;
+    const s = rise / 18;
     const t0 = c30.start + c30.dur * ((idxTip + 1) / n30) + 0.1;
     return ink.stroke({ id: 's8-cadel-' + key, t0, dur: 0.55, w: 0.6, taper: 0.55, pts: [
-      { x: xb, y: yb }, { x: xb + 1.6, y: yb - 6 },
-      { x: xb + 4.2, y: yb - 12 }, { x: xb + 7.6, y: yb - 18 },
+      { x: xb, y: yb }, { x: xb + 1.6 * s, y: yb - 6 * s },
+      { x: xb + 4.2 * s, y: yb - 12 * s }, { x: xb + 7.6 * s, y: yb - 18 * s },
     ] });
   };
   const iF = TXT30.indexOf('flights');                  // the 'fl' ascenders
   const iL = TXT30.indexOf('angels') + 4;               // the 'l' of angels
   film.add(cadel(iF, ink.glyphW('f', sz30, 'roman') * 0.7, 'f'));
-  film.add(cadel(iL, ink.glyphW('l', sz30, 'roman') * 0.45, 'l'));
+  film.add(cadel(iL, ink.glyphW('l', sz30, 'roman') * 0.45, 'l', 14));
 
   // THE PEN-KNOT: a notarial flourish at the ledger's foot — four overlapping
   // looping strokes, ~26 units wide, drawn while her line writes.
